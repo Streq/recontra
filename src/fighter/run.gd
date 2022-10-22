@@ -29,6 +29,11 @@ func _physics_update(delta: float) -> void:
 	
 	root.velocity.x = lerp(root.velocity.x, root.facing_dir*root.run_speed, root.run_lerp*delta)
 	
+	
 	if root.input_state.A.is_just_pressed():
-		goto("jump")
+		if dir.y>0.0:
+			root.global_position.y+=1
+		else:
+			goto("jump")
+		return
 	

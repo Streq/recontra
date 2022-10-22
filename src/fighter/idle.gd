@@ -25,7 +25,10 @@ func _physics_update(delta: float) -> void:
 		return
 
 	if root.input_state.A.is_just_pressed():
-		goto("jump")
+		if dir.y>0.0:
+			root.global_position.y+=1
+		else:
+			goto("jump")
 		return
 	
 	if root.input_state.dir.x:

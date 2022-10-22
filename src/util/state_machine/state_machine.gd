@@ -25,7 +25,7 @@ func update(delta: float):
 func handle_input(event: InputEvent):
 	current._handle_input(event)
 
-func _change_state(state_name: String, params):
+func _change_state(state_name: String, params = []):
 	current.exit()
 	current = states[state_name]
 	current.enter(params)

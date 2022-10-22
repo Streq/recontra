@@ -1,0 +1,59 @@
+extends KinematicBody2D
+signal got_hit(by)
+signal took_damage(amount)
+signal die()
+
+export var velocity := Vector2()
+
+
+export var walk_speed := 60.0
+export var run_speed := 120.0
+export var gravity := 150.0
+export var jump_speed := 125.0
+export var team := 0
+export (float, 0, 60) var idle_lerp := 7
+export (float, 0, 60) var stop_lerp := 10
+export (float, 0, 60) var run_lerp := 10
+export (float, 0, 60) var air_lerp := 1
+export (float, 0, 60) var air_run_lerp := 4
+export var palette_override := -1 
+
+export var init_health_max := 100.0
+
+
+onready var input_state: Node = $input_state
+onready var state_animation: AnimationPlayer = $state_animation
+onready var palette_animation: AnimationPlayer = $palette_animation
+onready var pivot: Node2D = $pivot
+onready var state_machine: Node = $state_machine
+onready var palette_client: Node = $pivot/Sprite/palette_client
+
+export var facing_dir = 1.0 setget set_facing_dir
+
+func _ready() -> void:
+	state_machine.initialize()
+	if palette_override >= 0:
+		palette_client.index = palette_override
+
+func _physics_process(delta: float) -> void:
+	velocity.y += gravity*delta
+	state_machine.physics_update(delta)
+
+func turn_around():
+	set_facing_dir(sign(-facing_dir))
+
+func set_facing_dir(val):
+	facing_dir = val
+	pivot.scale.x = sign(facing_dir)*abs(pivot.scale.x)
+
+func get_hit(by):
+	palette_animation.play("hurt")
+	by.affect(self)
+	emit_signal("got_hit",by)
+
+func take_damage(amount):
+	emit_signal("took_damage", amount)
+
+func die():
+	state_machine._change_state("dead_air")
+	emit_signal("die")

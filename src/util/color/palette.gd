@@ -5,11 +5,10 @@ export var palette: PoolColorArray setget set_palette
 export var material : ShaderMaterial
 export var glow = false setget set_glow
 export var glow_speed = 1.0
-export var is_object := false
-
 
 export var string_val : String setget set_string_val
-
+export var is_object := false
+var shader_offset
 
 var ready = false
 
@@ -42,6 +41,7 @@ func _ready():
 	
 	ready = true
 	set_palette(palette)
+	shader_offset = material.get_shader_param("offset")
 	material.set_shader_param("palette", tex)
 	material.set_shader_param("palette_size", palette.size())
 	update_parent_material()
@@ -68,7 +68,6 @@ func update_tex_from_palette():
 		var img = Image.new()
 		img.create(size, 1, false, Image.FORMAT_RGBA8)
 		img.lock()
-		
 		if is_object:
 			img.set_pixel(0, 0, Color.transparent)
 			for i in range(1,size):
@@ -91,5 +90,5 @@ func _process(delta):
 func set_glow(val):
 	glow = val
 	if ready:
-		material.set_shader_param("offset", 0)
+		material.set_shader_param("offset", shader_offset)
 	
