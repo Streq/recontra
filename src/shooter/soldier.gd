@@ -27,14 +27,19 @@ onready var palette_animation: AnimationPlayer = $palette_animation
 onready var pivot: Node2D = $pivot
 onready var state_machine: Node = $state_machine
 onready var palette_client: Node = $pivot/Sprite/palette_client
+onready var gun_hold: Node2D = $pivot/gun_pivot/gun_hold
 
 export var facing_dir = 1.0 setget set_facing_dir
 
+var ready = false
+
 func _ready() -> void:
+	ready = true
 	state_machine.initialize()
 	if palette_override >= 0:
 		palette_client.index = palette_override
-
+	set_facing_dir(facing_dir)
+	
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity*delta
 	state_machine.physics_update(delta)
@@ -44,7 +49,8 @@ func turn_around():
 
 func set_facing_dir(val):
 	facing_dir = val
-	pivot.scale.x = sign(facing_dir)*abs(pivot.scale.x)
+	if ready:
+		pivot.scale.x = sign(facing_dir)*abs(pivot.scale.x)
 
 func get_hit(by):
 	palette_animation.play("hurt")

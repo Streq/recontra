@@ -7,6 +7,13 @@ export var movement_threshold_squared := 100*100
 export var knockback := 0.0
 export var damage := 1.0
 export var team := 0
+export var lifespan := 3.0
+
+onready var lifespan_timer: Timer = $lifespan
+
+func _ready() -> void:
+	if lifespan > 0.0:
+		lifespan_timer.start(lifespan)
 
 func _physics_process(delta: float) -> void:
 	position += velocity*delta
@@ -29,3 +36,7 @@ func affect(enemy):
 	enemy.take_damage(damage)
 	if velocity.x:
 		enemy.facing_dir = -sign(velocity.x)
+
+
+func _on_lifespan_timeout() -> void:
+	queue_free()

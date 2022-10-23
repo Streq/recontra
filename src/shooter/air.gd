@@ -15,7 +15,7 @@ func _physics_update(delta: float):
 		if root.facing_dir != sign(dirx):
 			root.turn_around()
 	
-	if dir.length() < 0.95:
+	if dir.length() < 0.90:
 		root.velocity.x = lerp(root.velocity.x, 0.0, root.air_lerp*delta)
 	else:
 		root.velocity.x = lerp(root.velocity.x, root.run_speed*sign(dirx), root.air_run_lerp*delta)

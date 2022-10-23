@@ -5,7 +5,7 @@
 [ext_resource path="res://src/test/gameplay_test/input_state.gd" type="Script" id=3]
 [ext_resource path="res://src/color/palette_client.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/shooter/hurtbox.gd" type="Script" id=5]
-[ext_resource path="res://src/shooter/shotgun.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/shooter/gun_hold.gd" type="Script" id=6]
 [ext_resource path="res://src/util/state_machine/state_machine.gd" type="Script" id=7]
 [ext_resource path="res://src/shooter/run.gd" type="Script" id=8]
 [ext_resource path="res://src/shooter/idle.gd" type="Script" id=9]
@@ -64,6 +64,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("pivot/hitbox_manager/hurtbox:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=97]
@@ -190,6 +202,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 3.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("pivot/hitbox_manager/hurtbox:enabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=99]
@@ -517,6 +541,7 @@ material = SubResource( 90 )
 texture = ExtResource( 10 )
 hframes = 3
 vframes = 2
+frame = 3
 __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PXN0YXRlX2FuaW1hdGlvbgpzb3VyY2V8PXJlczovL2Fzc2V0cy9hc2Vwcml0ZS9zb2xkaWVyLmFzZXByaXRlCmxheWVyfD0Kb3BfZXhwfD1GYWxzZQpvX2ZvbGRlcnw9cmVzOi8vYXNzZXRzL3RleHR1cmUvZmlnaHRlcgpvX25hbWV8PQpvbmx5X3Zpc2libGV8PVRydWUKb19leF9wfD0K"
 }
@@ -546,7 +571,8 @@ shape = SubResource( 95 )
 [node name="gun_pivot" type="Node2D" parent="pivot"]
 script = ExtResource( 13 )
 
-[node name="gun" parent="pivot/gun_pivot" instance=ExtResource( 6 )]
+[node name="gun_hold" type="Node2D" parent="pivot/gun_pivot"]
+script = ExtResource( 6 )
 
 [node name="state_animation" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 105 )
@@ -623,7 +649,6 @@ anims/play = SubResource( 118 )
 [connection signal="die" from="." to="pivot/gun_pivot" method="disable"]
 [connection signal="die" from="." to="hud_bar" method="hide"]
 [connection signal="took_damage" from="." to="health" method="subtract"]
-[connection signal="shoot" from="pivot/gun_pivot/gun" to="pivot/gun_pivot/gun/muzzle" method="shoot"]
 [connection signal="entered" from="state_machine/dead" to="death_free_anim" method="play"]
 [connection signal="empty" from="health" to="." method="die"]
 [connection signal="value_changed" from="health" to="hud_bar" method="_value_changed"]

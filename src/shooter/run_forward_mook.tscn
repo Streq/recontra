@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://src/shooter/soldier.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/shader/palette.gdshader" type="Shader" id=2]
+[ext_resource path="res://src/shooter/AI/basic_mook.gd" type="Script" id=3]
+[ext_resource path="res://src/shooter/gun.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Image" id=16]
+data = {
+"data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 57, 189, 24, 255, 0, 0, 0, 255 ),
+"format": "RGBA8",
+"height": 1,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture" id=14]
+flags = 0
+flags = 0
+image = SubResource( 16 )
+size = Vector2( 4, 1 )
+
+[sub_resource type="ShaderMaterial" id=15]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/palette_size = 4
+shader_param/offset = 0
+shader_param/blue_index_offset = 0.0
+shader_param/palette = SubResource( 14 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 317, 20 )
+
+[sub_resource type="Image" id=17]
+data = {
+"data": PoolByteArray( 255, 255, 255, 0, 99, 206, 8, 255, 41, 115, 0, 255, 57, 57, 57, 255 ),
+"format": "RGBA8",
+"height": 1,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture" id=11]
+flags = 0
+flags = 0
+image = SubResource( 17 )
+size = Vector2( 4, 1 )
+
+[sub_resource type="ShaderMaterial" id=12]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/palette_size = 4
+shader_param/offset = 0
+shader_param/blue_index_offset = 0.0
+shader_param/palette = SubResource( 11 )
+
+[node name="soldier" instance=ExtResource( 1 )]
+team = 1
+init_health_max = 1.0
+
+[node name="Sprite" parent="pivot" index="0"]
+material = SubResource( 15 )
+
+[node name="palette_client" parent="pivot/Sprite" index="1"]
+index = 2
+
+[node name="gun" parent="pivot/gun_pivot/gun_hold" index="0" instance=ExtResource( 4 )]
+cooldown = 0.75
+
+[node name="target_detect" type="Area2D" parent="pivot" index="3"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pivot/target_detect" index="0"]
+position = Vector2( 322, 0 )
+shape = SubResource( 5 )
+
+[node name="hud_bar" parent="." index="7"]
+material = SubResource( 12 )
+
+[node name="basic_mook_controller" type="Node" parent="." index="9"]
+process_priority = -10
+script = ExtResource( 3 )
+dir = Vector2( 1, 0 )
+vertical_aim = false
+target_detect_path = NodePath("../pivot/target_detect")
+
+[connection signal="shoot" from="pivot/gun_pivot/gun_hold/gun" to="pivot/gun_pivot/gun_hold/gun/muzzle" method="shoot"]

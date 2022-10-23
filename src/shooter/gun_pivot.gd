@@ -1,7 +1,7 @@
 extends Node2D
 #onready var gun: Node2D = $shotgun
 
-onready var gun: Node2D = $gun
+onready var gun_hold: Node2D = $gun_hold
 
 export var disabled := false setget set_disabled
 
@@ -22,9 +22,9 @@ func _physics_process(delta: float) -> void:
 		dir.x = -dir.x
 	
 	if dir:
-		gun.rotation = dir.angle()
+		gun_hold.rotation = dir.angle()
 	else:
-		gun.rotation = 0.0
+		gun_hold.rotation = 0.0
 	
 	if input.B.is_just_pressed():
-		gun.shoot()
+		gun_hold.shoot()

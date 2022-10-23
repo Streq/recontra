@@ -12,6 +12,7 @@ func _physics_update(delta: float):
 		if input.A.is_just_pressed():
 			if diry>0.5:
 				root.global_position.y+=1.0
+				root.velocity.y += 25.0
 			else:
 				root.velocity.y -= root.jump_speed
 				goto("jump")
@@ -22,7 +23,7 @@ func _physics_update(delta: float):
 	if dirx:
 		if root.facing_dir != sign(dirx):
 			root.turn_around()
-	if dir.length() < 0.95 or !dir.x:
+	if dir.length() < 0.90 or !dir.x:
 		goto("idle")
 		return
 	

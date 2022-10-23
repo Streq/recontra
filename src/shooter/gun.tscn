@@ -9,7 +9,7 @@
 
 [sub_resource type="Image" id=4]
 data = {
-"data": PoolByteArray( 255, 255, 255, 0, 200, 146, 57, 255, 166, 122, 24, 255, 57, 57, 57, 255 ),
+"data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 123, 82, 24, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
 "height": 1,
 "mipmaps": false,
@@ -32,7 +32,7 @@ shader_param/palette = SubResource( 2 )
 
 [node name="gun" type="Node2D"]
 script = ExtResource( 5 )
-cooldown = 0.2
+cooldown = 0.5
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 3 )
@@ -41,12 +41,12 @@ texture = ExtResource( 4 )
 
 [node name="palette_client" parent="Sprite" instance=ExtResource( 2 )]
 type = 1
-index = 7
+index = 3
 
 [node name="muzzle" type="Node2D" parent="."]
 position = Vector2( 11, 0 )
 script = ExtResource( 6 )
-base_shoot_speed = 150.0
+base_shoot_speed = 225.0
 rand_added_speed = 0.0
 amount = 1
 spread_degrees = 0.0
