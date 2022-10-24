@@ -20,4 +20,5 @@ func add_gun(gun:Node):
 func remove_gun():
 	remove_child(gun)
 	disconnect("shoot", gun, "shoot")
+	gun.queue_free()
 	gun = null

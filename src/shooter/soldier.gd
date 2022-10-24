@@ -32,6 +32,7 @@ onready var gun_hold: Node2D = $pivot/gun_pivot/gun_hold
 export var facing_dir = 1.0 setget set_facing_dir
 
 var ready = false
+var dead = false
 
 func _ready() -> void:
 	ready = true
@@ -62,6 +63,14 @@ func take_damage(amount):
 
 func die():
 	state_machine._change_state("dead_air")
-	emit_signal("die")
 	if is_on_floor():
 		velocity.y-=25.0
+
+	if dead:
+		return
+	dead = true
+	emit_signal("die")
+	
+func change_weapon(new_weapon):
+	gun_hold.remove_gun()
+	gun_hold.add_gun(new_weapon)

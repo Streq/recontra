@@ -11,14 +11,7 @@ func refresh_weight():
 func _ready():
 	refresh_weight()
 	pass
-#	refresh()
-#	connect("child_entered_tree",self,"_on_child_entered")
-#	connect("child_exiting_tree",self,"_on_child_exiting")
 
-#func _on_child_entered(child):
-#	refresh()
-#func _on_child_exiting(child):
-#	refresh()
 func get_spawn():
 	emit_signal("pre_spawn")
 	refresh_weight()

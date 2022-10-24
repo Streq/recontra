@@ -12,6 +12,7 @@ export var recoil := 0.0
 
 export var override_drag := -1.0
 export var override_movement_threshold_squared := -1.0
+export var override_scale := Vector2()
 
 export var time_between_shots := 0.0
 
@@ -57,7 +58,8 @@ func shoot_bullet(wearer = owner, angle = 0.0, power = 0.0):
 			bullet.drag = override_drag
 		if override_movement_threshold_squared >= 0.0:
 			bullet.movement_threshold_squared = override_movement_threshold_squared
-
+		if override_scale:
+			bullet.scale = override_scale
 func instance_bullet():
 #	return pool.get_one()
 	var bullet = BULLET.instance()
