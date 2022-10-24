@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://src/controller/input_controller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/texture/some_autotiles.png" type="Texture" id=2]
@@ -15,8 +15,6 @@
 [ext_resource path="res://src/map/despawn_zone.gd" type="Script" id=13]
 [ext_resource path="res://src/shooter/run_forward_vertical_aim_mook.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/map/decrease_wait_time_with_time.gd" type="Script" id=15]
-[ext_resource path="res://assets/font/Plotter/PC/Plotter.ttf" type="DynamicFontData" id=16]
-[ext_resource path="res://src/map/time_left.gd" type="Script" id=17]
 [ext_resource path="res://src/shooter/run_forward_jump_mook.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/font/Plotter/PC/Plotter Bold.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://src/map/map.gd" type="Script" id=20]
@@ -522,10 +520,6 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 [sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 8, 152 )
 
-[sub_resource type="DynamicFont" id=60]
-size = 8
-font_data = ExtResource( 16 )
-
 [sub_resource type="DynamicFont" id=67]
 size = 8
 font_data = ExtResource( 19 )
@@ -607,7 +601,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 15, 25, 35, 45, 55, 65, 75, 85 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 5.0, 5.0, 5.0 ]
+"values": [ 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("spawn_source/aim_mook:weight")
@@ -619,7 +613,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 15, 25, 35, 45, 55, 65, 75, 85 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0.0, 0.0, 1.0, 2.0, 3.0, 4.0, 4.0, 4.0, 4.0 ]
+"values": [ 0.0, 0.0, 1.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("spawn_source/mook:weight")
@@ -925,20 +919,6 @@ shape = SubResource( 57 )
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer2"]
-margin_right = 32.0
-margin_bottom = 7.0
-custom_fonts/font = SubResource( 60 )
-text = "1:30"
-script = ExtResource( 17 )
-timer_path = NodePath("../../time_left")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/Label"]
-modulate = Color( 0, 0, 0, 1 )
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-
 [node name="consigna_label" type="Label" parent="CanvasLayer2"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -979,7 +959,7 @@ align = 1
 autowrap = true
 percent_visible = 0.0
 script = ExtResource( 23 )
-consignas = [ "GANASTE!!!! AHORA EN UN RATO VIENEN LOS OTROS Y SE ARMA", "FRODO DESTRUYO EL ANILLO!!!! GANASTE!!!!!!!!!", "GANASTE!!!!!!!!! RECONTRA PIOLA ", "GANASTE COMO RAMBO EN LA PELI (NO SE NO LA VI)", "TE BANCASTE TODOS LOS TRAPOS QUE HABIA!! LA VERDAD SOS 1 MONSTRUO", "GANASTE!!!!! EL HELICOPTERO ESTA ACA JUSTO AFUERA DE LA PANTALLA!!" ]
+consignas = [ "GANASTE!!!! AHORA EN UN RATO VIENEN LOS DE TU BANDO Y SE ARMA", "FRODO DESTRUYO EL ANILLO!!!! GANASTE!!!!!!!!!", "GANASTE!!!!!!!!! RECONTRA PIOLA ", "GANASTE COMO RAMBO EN LA PELI (NO SE NO LA VI)", "TE BANCASTE TODOS LOS TRAPOS QUE HABIA!! LA VERDAD SOS 1 MONSTRUO", "GANASTE!!!!! EL HELICOPTERO ESTA ACA JUSTO AFUERA DE LA PANTALLA!!" ]
 index_source = NodePath("../consigna_label")
 
 [node name="lose_label" type="Label" parent="CanvasLayer2"]

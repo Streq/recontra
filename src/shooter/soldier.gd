@@ -63,3 +63,5 @@ func take_damage(amount):
 func die():
 	state_machine._change_state("dead_air")
 	emit_signal("die")
+	if is_on_floor():
+		velocity.y-=25.0

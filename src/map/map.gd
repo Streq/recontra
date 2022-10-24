@@ -5,13 +5,23 @@ onready var spawner_timer: Timer = $spawner/Timer
 onready var lose_anim: AnimationPlayer = $lose_anim
 onready var consigna_label: Label = $CanvasLayer2/consigna_label
 
+var outcome_decided = false
+
 func lose():
+	if outcome_decided:
+		return
+	
+	outcome_decided = true
 	consigna_label.visible = false
 	time_left.paused = true
 	lose_anim.play("play")
 	pass
 
 func win():
+	if outcome_decided:
+		return
+	
+	outcome_decided = true
 	consigna_label.visible = false
 	win_anim.play("play")
 	spawner_timer.paused = true
