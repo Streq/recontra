@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/shooter/gun.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/shooter/decrease_accuracy_while_shooting.gd" type="Script" id=2]
+
+[node name="uzi" instance=ExtResource( 1 )]
+cooldown = 0.2
+automatic = true
+
+[node name="muzzle" parent="." index="1"]
+base_shoot_speed = 600.0
+spread_degrees = 2.5
+recoil = 25.0
+override_drag = 2.0
+
+[node name="decrease_accuracy_while_shooting" type="Node" parent="muzzle" index="0"]
+script = ExtResource( 2 )
+
+[connection signal="shoot" from="." to="muzzle" method="shoot"]
+[connection signal="shoot" from="." to="muzzle/decrease_accuracy_while_shooting" method="_on_shoot"]
+[connection signal="trigger_pressed" from="." to="muzzle/decrease_accuracy_while_shooting" method="_on_trigger_pressed"]
+[connection signal="trigger_released" from="." to="muzzle/decrease_accuracy_while_shooting" method="_on_trigger_released"]

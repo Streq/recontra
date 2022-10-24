@@ -12,7 +12,7 @@
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 4, 4 )
 
-[sub_resource type="Image" id=129]
+[sub_resource type="Image" id=125]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -21,42 +21,42 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=120]
+[sub_resource type="ImageTexture" id=2]
 flags = 0
 flags = 0
-image = SubResource( 129 )
+image = SubResource( 125 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=121]
+[sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 120 )
+shader_param/palette = SubResource( 2 )
 
-[sub_resource type="Image" id=130]
+[sub_resource type="Image" id=126]
 data = {
-"data": PoolByteArray( 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 155, 0, 255 ),
+"data": PoolByteArray( 255, 255, 255, 0, 255, 0, 0, 255, 255, 255, 0, 255, 255, 255, 255, 255 ),
 "format": "RGBA8",
 "height": 1,
 "mipmaps": false,
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=127]
+[sub_resource type="ImageTexture" id=5]
 flags = 0
 flags = 0
-image = SubResource( 130 )
+image = SubResource( 126 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=128]
+[sub_resource type="ShaderMaterial" id=6]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 127 )
+shader_param/palette = SubResource( 5 )
 
 [sub_resource type="Animation" id=123]
 length = 0.001
@@ -102,7 +102,7 @@ collision_mask = 8
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 121 )
+material = SubResource( 3 )
 texture = ExtResource( 5 )
 
 [node name="palette_client" parent="Sprite" instance=ExtResource( 3 )]
@@ -110,12 +110,12 @@ type = 1
 
 [node name="Sprite" type="Sprite" parent="Sprite"]
 show_behind_parent = true
-material = SubResource( 128 )
+material = SubResource( 6 )
 texture = ExtResource( 8 )
 
 [node name="palette_client" parent="Sprite/Sprite" instance=ExtResource( 3 )]
 type = 1
-index = 4
+index = 7
 
 [node name="effect" type="Node" parent="."]
 script = ExtResource( 2 )

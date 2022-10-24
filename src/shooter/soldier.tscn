@@ -25,7 +25,7 @@
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 4, 7 )
 
-[sub_resource type="Image" id=125]
+[sub_resource type="Image" id=119]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -34,19 +34,19 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=120]
+[sub_resource type="ImageTexture" id=2]
 flags = 0
 flags = 0
-image = SubResource( 125 )
+image = SubResource( 119 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=121]
+[sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 120 )
+shader_param/palette = SubResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=95]
 extents = Vector2( 5.5, 5.5 )
@@ -467,7 +467,7 @@ tracks/1/keys = {
 "values": [ false, false, false ]
 }
 
-[sub_resource type="Image" id=126]
+[sub_resource type="Image" id=120]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 99, 206, 8, 255, 41, 115, 0, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -476,19 +476,19 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=123]
+[sub_resource type="ImageTexture" id=30]
 flags = 0
 flags = 0
-image = SubResource( 126 )
+image = SubResource( 120 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=124]
+[sub_resource type="ShaderMaterial" id=31]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 123 )
+shader_param/palette = SubResource( 30 )
 
 [sub_resource type="AtlasTexture" id=110]
 flags = 2
@@ -543,7 +543,7 @@ shape = SubResource( 93 )
 
 [node name="Sprite" type="Sprite" parent="pivot"]
 visible = false
-material = SubResource( 121 )
+material = SubResource( 3 )
 texture = ExtResource( 12 )
 hframes = 3
 vframes = 2
@@ -632,7 +632,7 @@ max_value = 16.0
 value = 16.0
 
 [node name="hud_bar" type="TextureProgress" parent="."]
-material = SubResource( 124 )
+material = SubResource( 31 )
 margin_left = -8.0
 margin_top = -11.0
 margin_right = 8.0

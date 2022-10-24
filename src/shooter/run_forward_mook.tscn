@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/shooter/soldier.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/shader/palette.gdshader" type="Shader" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/pickup/shotgun_pickup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/pickup/burst_pickup.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/pickup/health_up.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/pickup/uzi_pickup.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Image" id=26]
 data = {
@@ -445,17 +446,22 @@ script = ExtResource( 5 )
 scene = ExtResource( 9 )
 weight = 5.0
 
-[node name="health_up" type="Node" parent="drop_on_death/drop_table" index="1"]
+[node name="uzi" type="Node" parent="drop_on_death/drop_table" index="1"]
 script = ExtResource( 5 )
-scene = ExtResource( 11 )
-weight = 10.0
+scene = ExtResource( 12 )
+weight = 5.0
 
 [node name="burst" type="Node" parent="drop_on_death/drop_table" index="2"]
 script = ExtResource( 5 )
 scene = ExtResource( 10 )
 weight = 5.0
 
-[node name="nothing" type="Node" parent="drop_on_death/drop_table" index="3"]
+[node name="health_up" type="Node" parent="drop_on_death/drop_table" index="3"]
+script = ExtResource( 5 )
+scene = ExtResource( 11 )
+weight = 10.0
+
+[node name="nothing" type="Node" parent="drop_on_death/drop_table" index="4"]
 script = ExtResource( 5 )
 weight = 200.0
 

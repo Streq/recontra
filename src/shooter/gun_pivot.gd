@@ -12,6 +12,7 @@ func set_disabled(val):
 
 func disable():
 	set_disabled(true)
+	gun_hold.release_trigger()
 func enable():
 	set_disabled(false)
 
@@ -26,5 +27,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		gun_hold.rotation = 0.0
 	
+	#for AIs tapping once per frame
 	if input.B.is_just_pressed():
-		gun_hold.shoot()
+		gun_hold.release_trigger()
+		gun_hold.press_trigger()
+	elif input.B.is_pressed():
+		gun_hold.press_trigger()
+	else:
+		gun_hold.release_trigger()

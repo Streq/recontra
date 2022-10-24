@@ -1,5 +1,4 @@
 extends Node2D
-signal shoot
 
 var gun = null
 
@@ -8,8 +7,6 @@ func _ready() -> void:
 		self.gun = get_child(0)
 		connect("shoot", gun, "shoot")
 
-func shoot():
-	emit_signal("shoot")
 
 func add_gun(gun:Node):
 	add_child(gun)
@@ -18,7 +15,15 @@ func add_gun(gun:Node):
 	connect("shoot", gun, "shoot")
 	
 func remove_gun():
-	remove_child(gun)
-	disconnect("shoot", gun, "shoot")
-	gun.queue_free()
-	gun = null
+	if gun:
+		remove_child(gun)
+		disconnect("shoot", gun, "shoot")
+		gun.queue_free()
+		gun = null
+
+func press_trigger():
+	if gun:
+		gun.press_trigger()
+func release_trigger():
+	if gun:
+		gun.release_trigger()

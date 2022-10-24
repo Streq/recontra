@@ -417,7 +417,7 @@ anims/run = SubResource( 14 )
 [node name="basic_mook_controller" parent="." index="9"]
 vertical_aim = true
 
-[node name="nothing" parent="drop_on_death/drop_table" index="2"]
+[node name="nothing" parent="drop_on_death/drop_table" index="4"]
 weight = 20.0
 
 [editable path="pivot/gun_pivot/gun_hold/gun"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/shooter/soldier.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/shooter/gun.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/texture/fighter/soldier.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=2]
@@ -374,14 +373,6 @@ __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PXN0YXRlX2FuaW1hdGlvbgpzb3VyY2V8PXJlczovL2Fzc2V0cy9hc2Vwcml0ZS9zb2xkaWVyLmFzZXByaXRlCmxheWVyfD0Kb3BfZXhwfD1GYWxzZQpvX2ZvbGRlcnw9cmVzOi8vYXNzZXRzL3RleHR1cmUvZmlnaHRlcgpvX25hbWV8PQpvbmx5X3Zpc2libGV8PVRydWUKb19leF9wfD0K"
 }
 
-[node name="gun" parent="pivot/gun_pivot/gun_hold" index="0" instance=ExtResource( 2 )]
-cooldown = 0.25
-
-[node name="muzzle" parent="pivot/gun_pivot/gun_hold/gun" index="1"]
-base_shoot_speed = 750.0
-override_drag = 4.0
-override_scale = Vector2( 1, 2 )
-
 [node name="state_animation" parent="." index="2"]
 anims/RESET = SubResource( 2 )
 anims/air = SubResource( 1 )
@@ -394,7 +385,3 @@ anims/run = SubResource( 6 )
 max_value = 16.0
 value = 16.0
 rounded = true
-
-[connection signal="shoot" from="pivot/gun_pivot/gun_hold/gun" to="pivot/gun_pivot/gun_hold/gun/muzzle" method="shoot"]
-
-[editable path="pivot/gun_pivot/gun_hold/gun"]

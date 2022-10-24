@@ -8,7 +8,7 @@
 base_shoot_speed = 750.0
 rand_added_speed = 150.0
 amount = 3
-spread_degrees = 5.0
+spread_degrees = 2.5
 recoil = 100.0
 override_drag = 2.0
 override_movement_threshold_squared = 160000.0

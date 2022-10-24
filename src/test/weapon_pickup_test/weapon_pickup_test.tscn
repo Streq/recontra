@@ -18,7 +18,7 @@
 [ext_resource path="res://src/controller/input_controller.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/shooter/player_soldier.tscn" type="PackedScene" id=21]
 
-[sub_resource type="Image" id=93]
+[sub_resource type="Image" id=92]
 data = {
 "data": PoolByteArray( 246, 231, 213, 255, 122, 132, 255, 255, 78, 74, 255, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -27,21 +27,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=88]
+[sub_resource type="ImageTexture" id=87]
 flags = 0
 flags = 0
-image = SubResource( 93 )
+image = SubResource( 92 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=89]
+[sub_resource type="ShaderMaterial" id=88]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 88 )
+shader_param/palette = SubResource( 87 )
 
-[sub_resource type="Image" id=94]
+[sub_resource type="Image" id=93]
 data = {
 "data": PoolByteArray( 148, 198, 74, 255, 123, 165, 8, 255, 74, 107, 0, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -50,19 +50,19 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=91]
+[sub_resource type="ImageTexture" id=90]
 flags = 0
 flags = 0
-image = SubResource( 94 )
+image = SubResource( 93 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=92]
+[sub_resource type="ShaderMaterial" id=91]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 2.0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 91 )
+shader_param/palette = SubResource( 90 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -537,7 +537,7 @@ layer = -1
 
 [node name="Sprite" type="TextureRect" parent="CanvasLayer"]
 modulate = Color( 0, 0, 0, 1 )
-material = SubResource( 89 )
+material = SubResource( 88 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
@@ -547,7 +547,7 @@ stretch_mode = 1
 index = 3
 
 [node name="TileMap" type="TileMap" parent="."]
-material = SubResource( 92 )
+material = SubResource( 91 )
 tile_set = SubResource( 78 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2

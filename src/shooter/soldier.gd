@@ -2,6 +2,7 @@ extends KinematicBody2D
 signal got_hit(by)
 signal took_damage(amount)
 signal die()
+signal weapon_change(name)
 
 export var velocity := Vector2()
 
@@ -74,3 +75,4 @@ func die():
 func change_weapon(new_weapon):
 	gun_hold.remove_gun()
 	gun_hold.add_gun(new_weapon)
+	emit_signal("weapon_change", new_weapon.name)
