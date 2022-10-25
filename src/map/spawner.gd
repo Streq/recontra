@@ -1,5 +1,5 @@
 extends Node2D
-signal spawn
+signal spawn(who)
 
 onready var timer: Timer = $Timer
 
@@ -19,5 +19,5 @@ func spawn():
 	get_parent().add_child(entity)
 	entity.global_transform = spawn_point.global_transform
 	entity.add_to_group("enemy")
-	emit_signal("spawn")
+	emit_signal("spawn", entity)
 #	timer.wait_time=max(0.5, timer.wait_time*0.98)
