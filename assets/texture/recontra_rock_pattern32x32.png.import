@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/contra_tiles.png-f5bef06c4abef64262cd2e6753a017f3.stex"
+path="res://.import/recontra_rock_pattern32x32.png-21b2b4f11e60c8422a32a9ce43591a43.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/texture/contra_tiles.png"
-dest_files=[ "res://.import/contra_tiles.png-f5bef06c4abef64262cd2e6753a017f3.stex" ]
+source_file="res://assets/texture/recontra_rock_pattern32x32.png"
+dest_files=[ "res://.import/recontra_rock_pattern32x32.png-21b2b4f11e60c8422a32a9ce43591a43.stex" ]
 
 [params]
 

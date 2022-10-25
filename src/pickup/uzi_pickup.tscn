@@ -51,7 +51,7 @@ shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
 shader_param/palette = SubResource( 3 )
 
-[node name="weapon_change_pickup2" instance=ExtResource( 2 )]
+[node name="weapon_change_pickup3" instance=ExtResource( 2 )]
 
 [node name="Sprite" parent="." index="1"]
 material = SubResource( 117 )

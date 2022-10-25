@@ -30,7 +30,7 @@
 [ext_resource path="res://src/map/current_weapon_hud.gd" type="Script" id=28]
 [ext_resource path="res://src/map/counter_label.gd" type="Script" id=29]
 [ext_resource path="res://assets/texture/mapa.png" type="Texture" id=30]
-[ext_resource path="res://assets/texture/contra_tiles.png" type="Texture" id=31]
+[ext_resource path="res://assets/texture/recontra_tiles.png" type="Texture" id=31]
 
 [sub_resource type="Image" id=124]
 data = {
@@ -788,6 +788,7 @@ script = ExtResource( 20 )
 
 [node name="TileMap" type="TileMap" parent="."]
 material = SubResource( 104 )
+position = Vector2( 0, 4 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2
@@ -1017,7 +1018,7 @@ custom_fonts/font = SubResource( 67 )
 text = "ESTO ES TIPO VISTE 300 QUE EL CHABON SABE QUE VA A PERDER PERO IGUAL SE BANCA LOS TRAPOS? BUENO ASI, BANCATE LOS TRAPOS 90 SEGUNDOS"
 align = 1
 autowrap = true
-percent_visible = -0.00990099
+percent_visible = -0.00943396
 script = ExtResource( 22 )
 consignas = [ "ESTO ES TIPO VISTE 300 QUE EL CHABON SABE QUE VA A PERDER PERO IGUAL SE BANCA LOS TRAPOS? BUENO ASI, BANCATE LOS TRAPOS 90 SEGUNDOS", "VISTE EL SENIOR(NO TENGO ENIE) DE LOS ANILLOS? BUENO ESTO ES NADA QUE VER, SOBREVIVI 90 SEGUNDOS", "LA IDEA ES QUE NO TE MATEN POR 90 SEGUNDOS, VOS HACE LA TUYA MIENTRAS NO MUERAS", "EN ESTE JUEGO SOS TIPO RAMBO Y TENES QUE AGUANTAR 90 SEGUNDOS", "BANCATELA MINUTO Y MEDIO A LOS FIERRAZOS PARA GANAR", "PONELE QUE SI AGUANTAS 90 SEGUNDOS VIENE UN HELICOPTERO Y TE RESCATA" ]
 

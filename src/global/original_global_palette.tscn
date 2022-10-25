@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/shader/palette.gdshader" type="Shader" id=1]
 [ext_resource path="res://src/util/color/palette.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/global/GlobalPalette.gd" type="Script" id=3]
-[ext_resource path="res://assets/texture/contra_tiles.png" type="Texture" id=4]
+[ext_resource path="res://assets/texture/recontra_tiles.png" type="Texture" id=4]
 [ext_resource path="res://src/color/local_palette_client.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Image" id=173]
