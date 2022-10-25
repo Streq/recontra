@@ -1,0 +1,330 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/shader/palette.gdshader" type="Shader" id=1]
+[ext_resource path="res://src/color/palette_client.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/bullet/bullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/texture/gun.png" type="Texture" id=4]
+[ext_resource path="res://src/shooter/gun.gd" type="Script" id=5]
+[ext_resource path="res://src/shooter/muzzle.gd" type="Script" id=6]
+
+[sub_resource type="Image" id=118]
+data = {
+"data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
+"format": "RGBA8",
+"height": 1,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture" id=116]
+flags = 0
+flags = 0
+image = SubResource( 118 )
+size = Vector2( 4, 1 )
+
+[sub_resource type="ShaderMaterial" id=117]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/palette_size = 4
+shader_param/offset = 0
+shader_param/blue_index_offset = 0.0
+shader_param/palette = SubResource( 116 )
+
+[node name="sniper" type="Node2D"]
+script = ExtResource( 5 )
+cooldown = 0.5
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 117 )
+position = Vector2( 3, 0 )
+texture = ExtResource( 4 )
+
+[node name="palette_client" parent="Sprite" instance=ExtResource( 2 )]
+type = 1
+
+[node name="muzzle" type="Node2D" parent="."]
+position = Vector2( 11, 0 )
+script = ExtResource( 6 )
+base_shoot_speed = 1100.0
+rand_added_speed = 150.0
+amount = 1
+spread_degrees = 0.0
+carried_inertia_from_shooter = 0.1
+recoil = 200.0
+override_drag = 0.0
+override_movement_threshold_squared = 40000.0
+override_scale = Vector2( 4, 1 )
+override_targets_hit_before_despawn = 5
+BULLET = ExtResource( 3 )
+
+[node name="cooldown" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.5
+one_shot = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 32.0
+margin_top = -1.0
+margin_right = 33.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 64.0
+margin_top = -1.0
+margin_right = 65.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 96.0
+margin_top = -1.0
+margin_right = 97.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_left = 32.0
+margin_top = -1.0
+margin_right = 33.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+margin_left = 64.0
+margin_top = -1.0
+margin_right = 65.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+margin_left = 96.0
+margin_top = -1.0
+margin_right = 97.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+margin_left = 128.0
+margin_top = -1.0
+margin_right = 129.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect8" type="ColorRect" parent="."]
+margin_left = 160.0
+margin_top = -1.0
+margin_right = 161.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect9" type="ColorRect" parent="."]
+margin_left = 192.0
+margin_top = -1.0
+margin_right = 193.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect10" type="ColorRect" parent="."]
+margin_left = 128.0
+margin_top = -1.0
+margin_right = 129.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect11" type="ColorRect" parent="."]
+margin_left = 160.0
+margin_top = -1.0
+margin_right = 161.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect12" type="ColorRect" parent="."]
+margin_left = 192.0
+margin_top = -1.0
+margin_right = 193.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect13" type="ColorRect" parent="."]
+margin_left = 224.0
+margin_top = -1.0
+margin_right = 225.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect14" type="ColorRect" parent="."]
+margin_left = 256.0
+margin_top = -1.0
+margin_right = 257.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect15" type="ColorRect" parent="."]
+margin_left = 288.0
+margin_top = -1.0
+margin_right = 289.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect16" type="ColorRect" parent="."]
+margin_left = 224.0
+margin_top = -1.0
+margin_right = 225.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect17" type="ColorRect" parent="."]
+margin_left = 256.0
+margin_top = -1.0
+margin_right = 257.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect18" type="ColorRect" parent="."]
+margin_left = 288.0
+margin_top = -1.0
+margin_right = 289.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect19" type="ColorRect" parent="."]
+margin_left = 320.0
+margin_top = -1.0
+margin_right = 321.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect20" type="ColorRect" parent="."]
+margin_left = 352.0
+margin_top = -1.0
+margin_right = 353.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect21" type="ColorRect" parent="."]
+margin_left = 384.0
+margin_top = -1.0
+margin_right = 385.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect22" type="ColorRect" parent="."]
+margin_left = 320.0
+margin_top = -1.0
+margin_right = 321.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect23" type="ColorRect" parent="."]
+margin_left = 352.0
+margin_top = -1.0
+margin_right = 353.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect24" type="ColorRect" parent="."]
+margin_left = 384.0
+margin_top = -1.0
+margin_right = 385.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect25" type="ColorRect" parent="."]
+margin_left = 48.0
+margin_top = -1.0
+margin_right = 49.0
+
+[node name="ColorRect26" type="ColorRect" parent="."]
+margin_left = 80.0
+margin_top = -1.0
+margin_right = 81.0
+
+[node name="ColorRect27" type="ColorRect" parent="."]
+margin_left = 112.0
+margin_top = -1.0
+margin_right = 113.0
+
+[node name="ColorRect28" type="ColorRect" parent="."]
+margin_left = 48.0
+margin_top = -1.0
+margin_right = 49.0
+
+[node name="ColorRect29" type="ColorRect" parent="."]
+margin_left = 80.0
+margin_top = -1.0
+margin_right = 81.0
+
+[node name="ColorRect30" type="ColorRect" parent="."]
+margin_left = 112.0
+margin_top = -1.0
+margin_right = 113.0
+
+[node name="ColorRect31" type="ColorRect" parent="."]
+margin_left = 144.0
+margin_top = -1.0
+margin_right = 145.0
+
+[node name="ColorRect32" type="ColorRect" parent="."]
+margin_left = 176.0
+margin_top = -1.0
+margin_right = 177.0
+
+[node name="ColorRect33" type="ColorRect" parent="."]
+margin_left = 208.0
+margin_top = -1.0
+margin_right = 209.0
+
+[node name="ColorRect34" type="ColorRect" parent="."]
+margin_left = 144.0
+margin_top = -1.0
+margin_right = 145.0
+
+[node name="ColorRect35" type="ColorRect" parent="."]
+margin_left = 176.0
+margin_top = -1.0
+margin_right = 177.0
+
+[node name="ColorRect36" type="ColorRect" parent="."]
+margin_left = 208.0
+margin_top = -1.0
+margin_right = 209.0
+
+[node name="ColorRect37" type="ColorRect" parent="."]
+margin_left = 240.0
+margin_top = -1.0
+margin_right = 241.0
+
+[node name="ColorRect38" type="ColorRect" parent="."]
+margin_left = 272.0
+margin_top = -1.0
+margin_right = 273.0
+
+[node name="ColorRect39" type="ColorRect" parent="."]
+margin_left = 304.0
+margin_top = -1.0
+margin_right = 305.0
+
+[node name="ColorRect40" type="ColorRect" parent="."]
+margin_left = 240.0
+margin_top = -1.0
+margin_right = 241.0
+
+[node name="ColorRect41" type="ColorRect" parent="."]
+margin_left = 272.0
+margin_top = -1.0
+margin_right = 273.0
+
+[node name="ColorRect42" type="ColorRect" parent="."]
+margin_left = 304.0
+margin_top = -1.0
+margin_right = 305.0
+
+[node name="ColorRect43" type="ColorRect" parent="."]
+margin_left = 336.0
+margin_top = -1.0
+margin_right = 337.0
+
+[node name="ColorRect44" type="ColorRect" parent="."]
+margin_left = 368.0
+margin_top = -1.0
+margin_right = 369.0
+
+[node name="ColorRect45" type="ColorRect" parent="."]
+margin_left = 400.0
+margin_top = -1.0
+margin_right = 401.0
+
+[node name="ColorRect46" type="ColorRect" parent="."]
+margin_left = 336.0
+margin_top = -1.0
+margin_right = 337.0
+
+[node name="ColorRect47" type="ColorRect" parent="."]
+margin_left = 368.0
+margin_top = -1.0
+margin_right = 369.0
+
+[node name="ColorRect48" type="ColorRect" parent="."]
+margin_left = 400.0
+margin_top = -1.0
+margin_right = 401.0
+
+[connection signal="shoot" from="." to="muzzle" method="shoot"]
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

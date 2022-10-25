@@ -530,7 +530,7 @@ length = 0.001
 resource_name = "play"
 length = 10.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1

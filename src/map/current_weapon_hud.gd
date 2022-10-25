@@ -1,7 +1,7 @@
 extends TextureRect
 
 const PATH = "res://assets/texture/pickup/%s_pickup.png"
-const WEAPONS = ["uzi","shotgun","burst"]
+const WEAPONS = ["uzi","shotgun","burst","sniper"]
 var map = {}
 func _ready():
 	for weapon in WEAPONS:
