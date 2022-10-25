@@ -36,12 +36,13 @@ material = SubResource( 3 )
 
 [node name="muzzle" parent="." index="1"]
 base_shoot_speed = 750.0
-spread_degrees = 2.5
+spread_degrees = 5.0
 recoil = 25.0
 override_drag = 6.0
 
 [node name="decrease_accuracy_while_shooting" type="Node" parent="muzzle" index="0"]
 script = ExtResource( 2 )
+max_accumulable = 30.0
 
 [connection signal="shoot" from="." to="muzzle/decrease_accuracy_while_shooting" method="_on_shoot"]
 [connection signal="trigger_pressed" from="." to="muzzle/decrease_accuracy_while_shooting" method="_on_trigger_pressed"]

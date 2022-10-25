@@ -3,7 +3,7 @@ extends Node
 export var degrees_increased_per_shot := 1.0
 
 var accumulated = 0.0
-var max_accumulable = 45.0
+export var max_accumulable = 45.0
 
 
 func _on_trigger_pressed():
