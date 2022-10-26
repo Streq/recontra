@@ -9,20 +9,3 @@ func trigger() -> void:
 	palette.palette[1] = aux
 
 
-func shift_palette_right(
-		palette: PoolColorArray,
-		input_colors: PoolColorArray
-	) -> PoolColorArray:
-	input_colors.append_array(palette)
-	input_colors.resize(palette.size())
-	return input_colors
-	
-func shift_palette_left(
-		palette: PoolColorArray,
-		input_colors: PoolColorArray
-	) -> PoolColorArray:
-	for i in input_colors.size():
-		palette.remove(0)
-	palette.append_array(input_colors)
-	return palette
-	

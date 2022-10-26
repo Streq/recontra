@@ -639,7 +639,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 5, 15, 25, 35, 45, 55, 65, 75, 85 ),
+"times": PoolRealArray( 0, 10, 15, 25, 35, 45, 55, 65, 75, 85 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0 ]
@@ -667,6 +667,34 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 200 ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("time_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ -1 ],
+"method": "start"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("fade_out")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fade_in"
+} ]
 }
 
 [sub_resource type="Animation" id=76]
@@ -788,6 +816,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("fade_out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fade_out"
+} ]
 }
 
 [sub_resource type="RectangleShape2D" id=136]
@@ -1195,7 +1237,6 @@ type = 1
 process_mode = 0
 wait_time = 90.0
 one_shot = true
-autostart = true
 
 [node name="spawn_odds_change_animation" type="AnimationPlayer" parent="."]
 autoplay = "play"
@@ -1222,7 +1263,7 @@ SPLASH = ExtResource( 33 )
 position = Vector2( 0, 3.5 )
 shape = SubResource( 136 )
 
-[node name="fade_in" type="Node" parent="."]
+[node name="fade_out" type="Node" parent="."]
 script = ExtResource( 35 )
 
 [connection signal="dead_enemies_changed" from="." to="CanvasLayer2/dead_enemies" method="update_text"]

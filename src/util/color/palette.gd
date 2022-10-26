@@ -1,4 +1,5 @@
 extends Node
+class_name Palette
 tool
 
 export var palette: PoolColorArray setget set_palette
