@@ -26,9 +26,3 @@ func shift_palette_left(
 	palette.append_array(input_colors)
 	return palette
 	
-	
-func _ready() -> void:
-	var _palette = PoolColorArray([Color.red,Color.green,Color.blue])
-	print(shift_palette_left(_palette,PoolColorArray([Color.black])))
-	print(shift_palette_right(_palette,PoolColorArray([Color.black])))
-	print(_palette)
