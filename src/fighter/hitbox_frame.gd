@@ -17,6 +17,9 @@ func set_monitorable(val):
 
 func set_enabled(val):
 	enabled = val
+	call_deferred("update_enabled", val)
+
+func update_enabled(val):
 	for child in get_children():
 		child.monitorable = monitorable && enabled
 		child.monitoring = monitoring && enabled

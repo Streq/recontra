@@ -17,6 +17,7 @@ export (float, 0, 60) var stop_lerp := 10
 export (float, 0, 60) var run_lerp := 10
 export (float, 0, 60) var air_lerp := 1
 export (float, 0, 60) var air_run_lerp := 4
+export (float, 0, 60) var air_dead_lerp := 0.5
 export var palette_override := -1 
 
 export var init_health_max := 100.0

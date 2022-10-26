@@ -25,7 +25,7 @@
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 4, 7 )
 
-[sub_resource type="Image" id=119]
+[sub_resource type="Image" id=122]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -34,19 +34,19 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=2]
+[sub_resource type="ImageTexture" id=116]
 flags = 0
 flags = 0
-image = SubResource( 119 )
+image = SubResource( 122 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=117]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 2 )
+shader_param/palette = SubResource( 116 )
 
 [sub_resource type="RectangleShape2D" id=95]
 extents = Vector2( 5.5, 5.5 )
@@ -467,7 +467,7 @@ tracks/1/keys = {
 "values": [ false, false, false ]
 }
 
-[sub_resource type="Image" id=120]
+[sub_resource type="Image" id=123]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 99, 206, 8, 255, 41, 115, 0, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -476,19 +476,19 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=30]
+[sub_resource type="ImageTexture" id=28]
 flags = 0
 flags = 0
-image = SubResource( 120 )
+image = SubResource( 123 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=31]
+[sub_resource type="ShaderMaterial" id=29]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 30 )
+shader_param/palette = SubResource( 28 )
 
 [sub_resource type="AtlasTexture" id=110]
 flags = 2
@@ -499,7 +499,7 @@ region = Rect2( 0, 0, 16, 2 )
 atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 16, 2 )
 
-[sub_resource type="Animation" id=117]
+[sub_resource type="Animation" id=121]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("..:visible")
@@ -543,7 +543,7 @@ shape = SubResource( 93 )
 
 [node name="Sprite" type="Sprite" parent="pivot"]
 visible = false
-material = SubResource( 3 )
+material = SubResource( 117 )
 texture = ExtResource( 12 )
 hframes = 3
 vframes = 2
@@ -632,7 +632,7 @@ max_value = 16.0
 value = 16.0
 
 [node name="hud_bar" type="TextureProgress" parent="."]
-material = SubResource( 31 )
+material = SubResource( 29 )
 margin_left = -8.0
 margin_top = -11.0
 margin_right = 8.0
@@ -650,7 +650,7 @@ index = 6
 script = ExtResource( 21 )
 
 [node name="death_anim" type="AnimationPlayer" parent="death_free_anim"]
-anims/RESET = SubResource( 117 )
+anims/RESET = SubResource( 121 )
 anims/play = SubResource( 118 )
 
 [connection signal="die" from="." to="pivot/gun_pivot" method="disable"]
