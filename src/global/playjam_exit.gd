@@ -1,5 +1,7 @@
 extends Node
 
+onready var restart_rect: ColorRect = $restart_rect
+
 enum {
 	WIN = 1,
 	LOSE = 2,
@@ -14,17 +16,20 @@ func win():
 	if OS.has_feature("playjam"):
 		get_tree().quit(WIN)
 	else:
-		GlobalPalette.reload()
-		get_tree().reload_current_scene()
-		
+		restart()
+
 func lose():
 	if OS.has_feature("playjam"):
 		get_tree().quit(LOSE)
 	else:
-		GlobalPalette.reload()
-		get_tree().reload_current_scene()
+		restart()
+
 func quit():
-	if OS.has_feature("playjam"):
-		get_tree().quit(QUIT)
-	else:
-		Global.change_fullscreen()
+	get_tree().quit(QUIT)
+	
+func restart():
+	restart_rect.visible = true
+	yield(get_tree().create_timer(1.0),"timeout")
+	GlobalPalette.reload()
+	restart_rect.visible = false
+	get_tree().reload_current_scene()
