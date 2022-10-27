@@ -1,6 +1,5 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=35 format=2]
 
-[ext_resource path="res://assets/shader/palette.gdshader" type="Shader" id=1]
 [ext_resource path="res://src/fighter/hitbox/hitbox_frame.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/test/gameplay_test/input_state.gd" type="Script" id=3]
 [ext_resource path="res://src/color/palette_client.tscn" type="PackedScene" id=4]
@@ -24,29 +23,6 @@
 
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 4, 7 )
-
-[sub_resource type="Image" id=214]
-data = {
-"data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
-"format": "RGBA8",
-"height": 1,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="ImageTexture" id=213]
-flags = 0
-flags = 0
-image = SubResource( 214 )
-size = Vector2( 4, 1 )
-
-[sub_resource type="ShaderMaterial" id=155]
-resource_local_to_scene = true
-shader = ExtResource( 1 )
-shader_param/palette_size = 4
-shader_param/offset = 0
-shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 213 )
 
 [sub_resource type="RectangleShape2D" id=95]
 extents = Vector2( 5.5, 5.5 )
@@ -467,29 +443,6 @@ tracks/1/keys = {
 "values": [ false, false, false ]
 }
 
-[sub_resource type="Image" id=215]
-data = {
-"data": PoolByteArray( 149, 255, 0, 255, 0, 87, 0, 255, 64, 44, 0, 255, 0, 0, 0, 255 ),
-"format": "RGBA8",
-"height": 1,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="ImageTexture" id=138]
-flags = 0
-flags = 0
-image = SubResource( 215 )
-size = Vector2( 4, 1 )
-
-[sub_resource type="ShaderMaterial" id=139]
-resource_local_to_scene = true
-shader = ExtResource( 1 )
-shader_param/palette_size = 4
-shader_param/offset = 0.0
-shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 138 )
-
 [sub_resource type="AtlasTexture" id=110]
 flags = 2
 atlas = ExtResource( 16 )
@@ -543,7 +496,6 @@ shape = SubResource( 93 )
 
 [node name="Sprite" type="Sprite" parent="pivot"]
 visible = false
-material = SubResource( 155 )
 texture = ExtResource( 12 )
 hframes = 3
 vframes = 2
@@ -633,7 +585,6 @@ value = 16.0
 
 [node name="hud_bar" type="TextureProgress" parent="."]
 visible = false
-material = SubResource( 139 )
 margin_left = -8.0
 margin_top = -11.0
 margin_right = 8.0

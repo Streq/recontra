@@ -143,11 +143,14 @@ config/icon="res://assets/texture/icon.png"
 Global="*res://src/global/Global.tscn"
 GlobalPalette="*res://src/global/GlobalPalette.tscn"
 Group="*res://src/global/group.gd"
+InputConfigPlayjam="res://src/global/input_config_playjam.gd"
+Exit="*res://src/global/playjam_exit.gd"
 
 [display]
 
 window/size/width=640
 window/size/height=360
+window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

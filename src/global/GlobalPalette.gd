@@ -15,3 +15,22 @@ func get_palette_material(type: int, index: int) -> Material:
 
 func get_palette(type: int, index: int):
 	return palettes[type][index]
+
+var backup = [[],[]]
+
+func backup():
+	backup = [[],[]]
+	for pal in background_palettes:
+		backup[0].append(pal.palette)
+	for pal in object_palettes:
+		backup[1].append(pal.palette)
+	pass
+
+func reload():
+	for i in background_palettes.size():
+		background_palettes[i].palette = backup[0][i]
+	for i in object_palettes.size():
+		object_palettes[i].palette = backup[1][i]
+	pass
+func _ready() -> void:
+	backup()
