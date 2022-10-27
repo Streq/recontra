@@ -16,7 +16,7 @@
 [ext_resource path="res://src/shooter/death_fall.gd" type="Script" id=14]
 [ext_resource path="res://assets/shader/palette.gdshader" type="Shader" id=15]
 
-[sub_resource type="Image" id=251]
+[sub_resource type="Image" id=254]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 57, 189, 24, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -28,7 +28,7 @@ data = {
 [sub_resource type="ImageTexture" id=252]
 flags = 0
 flags = 0
-image = SubResource( 251 )
+image = SubResource( 254 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=253]
@@ -39,7 +39,7 @@ shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
 shader_param/palette = SubResource( 252 )
 
-[sub_resource type="Image" id=254]
+[sub_resource type="Image" id=255]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 123, 82, 24, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -51,7 +51,7 @@ data = {
 [sub_resource type="ImageTexture" id=2]
 flags = 0
 flags = 0
-image = SubResource( 254 )
+image = SubResource( 255 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=3]
@@ -426,7 +426,7 @@ tracks/4/keys = {
 "values": [ 1.0, 2.0 ]
 }
 
-[sub_resource type="Image" id=255]
+[sub_resource type="Image" id=256]
 data = {
 "data": PoolByteArray( 149, 255, 0, 255, 0, 87, 0, 255, 64, 44, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -438,7 +438,7 @@ data = {
 [sub_resource type="ImageTexture" id=249]
 flags = 0
 flags = 0
-image = SubResource( 255 )
+image = SubResource( 256 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=250]
