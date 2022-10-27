@@ -10,6 +10,7 @@ func _ready() -> void:
 	index = randi()%consignas.size()
 #	index = 5%consignas.size()
 	text = consignas[index]
+	set_size(Vector2(get_size().x,0))
 
 var fully_visible = false
 func _physics_process(delta: float) -> void:

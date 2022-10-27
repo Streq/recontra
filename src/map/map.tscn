@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://src/controller/input_controller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/texture/some_autotiles.png" type="Texture" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://src/HUD/life_dot.tscn" type="PackedScene" id=36]
 [ext_resource path="res://src/map/life.gd" type="Script" id=37]
 [ext_resource path="res://src/global/palette_alternator.gd" type="Script" id=38]
+[ext_resource path="res://assets/texture/dither.png" type="Texture" id=39]
 
 [sub_resource type="ConvexPolygonShape2D" id=84]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -837,7 +838,7 @@ index = 3
 tile_set = SubResource( 101 )
 cell_size = Vector2( 32, 16 )
 format = 1
-tile_data = PoolIntArray( 0, 0, 1, 1, 0, 2, 2, 0, 0, 3, 0, 3, 4, 0, 0, 5, 0, 3, 6, 0, 0, 7, 0, 3, 8, 0, 0, 9, 0, 3, 10, 0, 0, 11, 0, 3, 12, 0, 0, 13, 0, 3, 14, 0, 0, 15, 0, 3, 16, 0, 1, 17, 0, 4, 18, 0, 5, 19, 0, 2, 65536, 0, 65537, 65537, 0, 65538, 65538, 0, 3, 65539, 0, 0, 65540, 0, 3, 65541, 0, 0, 65542, 0, 3, 65543, 0, 0, 65544, 0, 3, 65545, 0, 0, 65546, 0, 3, 65547, 0, 0, 65548, 0, 3, 65549, 0, 0, 65550, 0, 3, 65551, 0, 0, 65552, 0, 65537, 65553, 0, 65540, 65554, 0, 65541, 65555, 0, 65538, 131072, 0, 131073, 131073, 0, 131074, 131074, 0, 65536, 131075, 0, 65536, 131076, 0, 65536, 131077, 0, 65536, 131078, 0, 65536, 131079, 0, 65536, 131080, 0, 65536, 131081, 0, 65536, 131082, 0, 65536, 131083, 0, 65536, 131084, 0, 65536, 131085, 0, 65536, 131086, 0, 65536, 131087, 0, 65536, 131088, 0, 131073, 131089, 0, 131076, 131090, 0, 131077, 131091, 0, 131074, 196615, 0, 65536, 196616, 0, 65536, 196617, 0, 65536, 196618, 0, 65536, 196619, 0, 65536, 196620, 0, 65536, 196621, 0, 65536, 196622, 0, 65536, 262151, 0, 65536, 262152, 0, 65536, 262153, 0, 65536, 262154, 0, 65536, 262155, 0, 65536, 262156, 0, 65536, 262157, 0, 65536, 262158, 0, 65536 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 3, 2, 0, 0, 3, 0, 3, 4, 0, 1, 5, 0, 2, 6, 0, 0, 7, 0, 3, 8, 0, 0, 9, 0, 3, 10, 0, 0, 11, 0, 3, 12, 0, 0, 13, 0, 3, 14, 0, 0, 15, 0, 3, 16, 0, 1, 17, 0, 4, 18, 0, 5, 19, 0, 2, 65536, 0, 3, 65537, 0, 0, 65538, 0, 3, 65539, 0, 0, 65540, 0, 65537, 65541, 0, 65538, 65542, 0, 3, 65543, 0, 0, 65544, 0, 3, 65545, 0, 0, 65546, 0, 3, 65547, 0, 0, 65548, 0, 3, 65549, 0, 0, 65550, 0, 3, 65551, 0, 0, 65552, 0, 65537, 65553, 0, 65540, 65554, 0, 65541, 65555, 0, 65538, 131072, 0, 65536, 131073, 0, 65536, 131074, 0, 65536, 131075, 0, 65536, 131076, 0, 131073, 131077, 0, 131074, 131078, 0, 65536, 131079, 0, 65536, 131080, 0, 65536, 131081, 0, 65536, 131082, 0, 65536, 131083, 0, 65536, 131084, 0, 65536, 131085, 0, 65536, 131086, 0, 65536, 131087, 0, 65536, 131088, 0, 131073, 131089, 0, 131076, 131090, 0, 131077, 131091, 0, 131074, 196615, 0, 65536, 196616, 0, 65536, 196617, 0, 65536, 196618, 0, 65536, 196619, 0, 65536, 196620, 0, 65536, 196621, 0, 65536, 196622, 0, 65536, 262151, 0, 65536, 262152, 0, 65536, 262153, 0, 65536, 262154, 0, 65536, 262155, 0, 65536, 262156, 0, 65536, 262157, 0, 65536, 262158, 0, 65536 )
 
 [node name="palette_client" parent="sky" instance=ExtResource( 5 )]
 index = 6
@@ -1006,6 +1007,56 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+margin_top = -12.0
+margin_bottom = -12.0
+
+[node name="intro_label" type="Label" parent="CanvasLayer2/intro"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -28.0
+margin_right = 128.0
+margin_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/line_spacing = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 0
+custom_fonts/font = SubResource( 67 )
+text = "BUENO CUCHAME, LA COSA ES ASI. SOS UN SOLDADO Y DISPARAS TIRITOS"
+align = 1
+autowrap = true
+percent_visible = 0.0
+script = ExtResource( 22 )
+consignas = [ "BUENO CUCHAME, LA COSA ES ASI. SOS UN SOLDADO Y DISPARAS TIRITOS" ]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/intro/intro_label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = -8
+custom_constants/margin_top = -8
+custom_constants/margin_left = -8
+custom_constants/margin_bottom = -8
+
+[node name="fade_rect" type="TextureRect" parent="CanvasLayer2/intro/intro_label/MarginContainer"]
+show_behind_parent = true
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 264.0
+margin_bottom = 31.0
+texture = ExtResource( 39 )
+expand = true
+stretch_mode = 2
+
+[node name="palette_client" parent="CanvasLayer2/intro/intro_label/MarginContainer/fade_rect" instance=ExtResource( 5 )]
+type = 1
+index = 1
 
 [node name="consigna_label" type="Label" parent="CanvasLayer2/intro"]
 visible = false
@@ -1014,9 +1065,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -128.0
-margin_top = -4.0
+margin_top = 4.0
 margin_right = 128.0
-margin_bottom = 44.0
+margin_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -1032,30 +1083,28 @@ percent_visible = 0.0
 script = ExtResource( 22 )
 consignas = [ "ESTO ES TIPO VISTE 300 QUE EL CHABON SABE QUE VA A PERDER PERO IGUAL SE BANCA LOS TRAPOS? BUENO ASI, POR 90 SEGUNDOS", "VISTE EL SENIOR(NO TENGO ENIE) DE LOS ANILLOS? BUENO ESTO ES NADA QUE VER, SOBREVIVI 90 SEGUNDOS", "LA IDEA ES QUE NO TE MATEN POR 90 SEGUNDOS, VOS HACE LA TUYA MIENTRAS NO MUERAS", "LA JODA ES QUE SOS TIPO RAMBO Y TENES QUE AGUANTAR 90 SEGUNDOS CONTRA EL PELOTON ENEMIGO COMO EN LA PELI", "TE TENES QUE BANCAR MINUTO Y MEDIO A LOS FIERRAZOS PARA GANAR", "PONELE QUE SI AGUANTAS 90 SEGUNDOS VIENE UN HELICOPTERO Y TE RESCATA" ]
 
-[node name="intro_label" type="Label" parent="CanvasLayer2/intro"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -128.0
-margin_top = -28.0
-margin_right = 128.0
-margin_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 1
-custom_constants/line_spacing = 1
-custom_constants/shadow_offset_y = 1
-custom_constants/shadow_as_outline = 0
-custom_fonts/font = SubResource( 67 )
-text = "BUENO CUCHAME, LA COSA ES ASI. SOS UN SOLDADO Y DISPARAS TIRITOS"
-align = 1
-autowrap = true
-percent_visible = 0.0
-script = ExtResource( 22 )
-consignas = [ "BUENO CUCHAME, LA COSA ES ASI. SOS UN SOLDADO Y DISPARAS TIRITOS" ]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/intro/consigna_label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = -8
+custom_constants/margin_top = -8
+custom_constants/margin_left = -8
+custom_constants/margin_bottom = -8
+
+[node name="fade_rect" type="TextureRect" parent="CanvasLayer2/intro/consigna_label/MarginContainer"]
+show_behind_parent = true
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 264.0
+margin_bottom = 56.0
+texture = ExtResource( 39 )
+expand = true
+stretch_mode = 2
+
+[node name="palette_client" parent="CanvasLayer2/intro/consigna_label/MarginContainer/fade_rect" instance=ExtResource( 5 )]
+type = 1
+index = 1
 
 [node name="free_timer" type="Timer" parent="CanvasLayer2/intro"]
 wait_time = 3.0
@@ -1086,6 +1135,29 @@ script = ExtResource( 23 )
 consignas = [ "GANASTE!!!! AHORA EN UN RATO VIENEN LOS DE TU BANDO Y SE ARMA", "FRODO DESTRUYO EL ANILLO!!!! GANASTE!!!!!!!!!", "GANASTE!!!!!!!!! RECONTRA PIOLA ", "GANASTE!! COMO RAMBO EN LA PELI (NO SE NO LA VI)", "TE BANCASTE TODOS LOS TRAPOS QUE HABIA!! LA VERDAD SOS 1 MONSTRUO", "GANASTE!!!!! EL HELICOPTERO ESTA ACA JUSTO AFUERA DE LA PANTALLA!!" ]
 index_source = NodePath("../intro/consigna_label")
 
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/win_label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = -8
+custom_constants/margin_top = -8
+custom_constants/margin_left = -8
+custom_constants/margin_bottom = -8
+
+[node name="fade_rect" type="TextureRect" parent="CanvasLayer2/win_label/MarginContainer"]
+show_behind_parent = true
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 248.0
+margin_bottom = 35.0
+texture = ExtResource( 39 )
+expand = true
+stretch_mode = 2
+
+[node name="palette_client" parent="CanvasLayer2/win_label/MarginContainer/fade_rect" instance=ExtResource( 5 )]
+type = 1
+index = 1
+
 [node name="lose_label" type="Label" parent="CanvasLayer2"]
 visible = false
 anchor_left = 0.5
@@ -1113,6 +1185,29 @@ consignas = [ "NO!!!! BUENO NO SE, PERDISTE", "TE RECONTRA PUSIERON", "RECONTRA 
 AH NO, PERDON, PERDISTE", "NOOOOO ESTABA RECONTRA CERCA EL HELICOPTERO" ]
 index_source = NodePath("../intro/consigna_label")
 
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/lose_label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = -8
+custom_constants/margin_top = -8
+custom_constants/margin_left = -8
+custom_constants/margin_bottom = -8
+
+[node name="fade_rect" type="TextureRect" parent="CanvasLayer2/lose_label/MarginContainer"]
+show_behind_parent = true
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 248.0
+margin_bottom = 35.0
+texture = ExtResource( 39 )
+expand = true
+stretch_mode = 2
+
+[node name="palette_client" parent="CanvasLayer2/lose_label/MarginContainer/fade_rect" instance=ExtResource( 5 )]
+type = 1
+index = 1
+
 [node name="survive_label" type="Label" parent="CanvasLayer2"]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1133,8 +1228,8 @@ timer_path = NodePath("../../time_left")
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer2/survive_label"]
 modulate = Color( 0, 0, 0, 1 )
 show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
 
 [node name="dead_enemies" type="Label" parent="CanvasLayer2"]
 visible = false
@@ -1257,8 +1352,9 @@ shape = SubResource( 136 )
 [node name="fade_out" type="Node" parent="."]
 script = ExtResource( 35 )
 delay_obj_bg = 0.0
-fade_in_step_time = 1.5
+fade_in_step_time = 0.5
 fade_out_step_time = 0.75
+fade_level = 3
 
 [node name="intro_anim" type="AnimationPlayer" parent="."]
 autoplay = "play"
@@ -1281,9 +1377,9 @@ wait_time = 0.5
 [connection signal="die" from="soldier" to="." method="_on_soldier_die"]
 [connection signal="weapon_change" from="soldier" to="CanvasLayer2/HBoxContainer/TextureRect/weapon_texture" method="_on_weapon_change"]
 [connection signal="body_entered" from="despawn_zone" to="despawn_zone" method="_on_despawn_zone_body_entered"]
-[connection signal="fully_visible" from="CanvasLayer2/intro/consigna_label" to="CanvasLayer2/intro/free_timer" method="start"]
 [connection signal="fully_visible" from="CanvasLayer2/intro/intro_label" to="spawn_odds_change_animation" method="play" binds= [ "play" ]]
 [connection signal="fully_visible" from="CanvasLayer2/intro/intro_label" to="fade_out" method="fade_in"]
+[connection signal="fully_visible" from="CanvasLayer2/intro/consigna_label" to="CanvasLayer2/intro/free_timer" method="start"]
 [connection signal="timeout" from="CanvasLayer2/intro/free_timer" to="CanvasLayer2/intro" method="queue_free"]
 [connection signal="fully_visible" from="CanvasLayer2/win_label" to="fade_out_win_anim" method="play" binds= [ "play" ]]
 [connection signal="timeout" from="time_left" to="." method="_on_time_left_timeout"]

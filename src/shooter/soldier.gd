@@ -78,3 +78,9 @@ func change_weapon(new_weapon):
 	gun_hold.remove_gun()
 	gun_hold.add_gun(new_weapon)
 	emit_signal("weapon_change", new_weapon.name)
+
+func get_weapon_name():
+	if gun_hold.gun:
+		return gun_hold.gun.name
+	else:
+		return ""

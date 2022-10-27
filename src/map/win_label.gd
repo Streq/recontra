@@ -7,6 +7,7 @@ export var index_source : NodePath
 
 func _ready() -> void:
 	text = consignas[get_node(index_source).index]
+	set_size(Vector2(get_size().x,0))
 
 var fully_visible = false
 func _physics_process(delta: float) -> void:

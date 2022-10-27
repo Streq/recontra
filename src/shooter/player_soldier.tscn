@@ -367,7 +367,6 @@ tracks/4/keys = {
 collision_layer = 9
 
 [node name="Sprite" parent="pivot" index="0"]
-material = null
 texture = ExtResource( 4 )
 __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PXN0YXRlX2FuaW1hdGlvbgpzb3VyY2V8PXJlczovL2Fzc2V0cy9hc2Vwcml0ZS9zb2xkaWVyLmFzZXByaXRlCmxheWVyfD0Kb3BfZXhwfD1GYWxzZQpvX2ZvbGRlcnw9cmVzOi8vYXNzZXRzL3RleHR1cmUvZmlnaHRlcgpvX25hbWV8PQpvbmx5X3Zpc2libGV8PVRydWUKb19leF9wfD0K"
@@ -382,7 +381,6 @@ anims/idle = SubResource( 5 )
 anims/run = SubResource( 6 )
 
 [node name="hud_bar" parent="." index="7"]
-material = null
 max_value = 16.0
 value = 16.0
 rounded = true
