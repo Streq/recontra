@@ -1,6 +1,6 @@
 extends Node2D
-
-
+signal fired_bullet()
+signal fired_shot()
 export var base_shoot_speed = 250.0
 export var rand_added_speed = 20.0
 export var amount = 5
@@ -46,7 +46,7 @@ func shoot(wearer = owner.owner):
 			yield(get_tree().create_timer(time_between_shots),"timeout")
 	
 	owner.shooting_muzzles -= 1
-	
+	emit_signal("fired_shot")
 func shoot_bullet(wearer = owner, angle = 0.0, power = 0.0):
 	var bullet = instance_bullet()
 	if bullet:
@@ -66,6 +66,7 @@ func shoot_bullet(wearer = owner, angle = 0.0, power = 0.0):
 			bullet.targets_hit_before_despawn = override_targets_hit_before_despawn
 		if override_knockback >= 0.0:
 			bullet.knockback = override_knockback
+	emit_signal("fired_bullet")
 func instance_bullet():
 #	return pool.get_one()
 	var bullet = BULLET.instance()
