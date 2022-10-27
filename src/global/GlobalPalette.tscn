@@ -1,11 +1,10 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://assets/shader/palette.gdshader" type="Shader" id=1]
 [ext_resource path="res://src/util/color/palette.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/global/GlobalPalette.gd" type="Script" id=3]
 [ext_resource path="res://assets/texture/recontra_tiles.png" type="Texture" id=4]
 [ext_resource path="res://src/color/local_palette_client.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/global/palette_alternator.gd" type="Script" id=6]
 
 [sub_resource type="Image" id=173]
 data = {
@@ -331,7 +330,7 @@ shader_param/palette = SubResource( 168 )
 
 [sub_resource type="Image" id=187]
 data = {
-"data": PoolByteArray( 255, 255, 255, 0, 99, 206, 8, 255, 41, 115, 0, 255, 57, 57, 57, 255 ),
+"data": PoolByteArray( 255, 255, 255, 0, 253, 255, 0, 255, 33, 255, 0, 255, 0, 91, 104, 255 ),
 "format": "RGBA8",
 "height": 1,
 "mipmaps": false,
@@ -423,13 +422,6 @@ palette = PoolColorArray( 0.988235, 0.988235, 0.988235, 1, 0.235294, 0.737255, 0
 material = SubResource( 33 )
 string_val = "[\"fffcfcfc\",\"ff3cbcfc\",\"ff0070ec\",\"ff000000\"]"
 
-[node name="palette_alternator" type="Node" parent="Background/water"]
-script = ExtResource( 6 )
-
-[node name="Timer" type="Timer" parent="Background/water/palette_alternator"]
-wait_time = 0.5
-autostart = true
-
 [node name="yellow" parent="Background" instance=ExtResource( 2 )]
 palette = PoolColorArray( 0.964706, 0.905882, 0.835294, 1, 1, 1, 0.223529, 1, 1, 0.517647, 0.0313726, 1, 0.223529, 0.223529, 0.223529, 1 )
 material = SubResource( 36 )
@@ -489,9 +481,9 @@ string_val = "[\"ff000000\",\"fffcfcfc\",\"ff3cbcfc\",\"ff0070ec\"]"
 is_object = true
 
 [node name="grass" parent="Object" instance=ExtResource( 2 )]
-palette = PoolColorArray( 0.709804, 1, 0.321569, 1, 0.388235, 0.807843, 0.0313726, 1, 0.160784, 0.45098, 0, 1, 0.223529, 0.223529, 0.223529, 1 )
+palette = PoolColorArray( 1, 1, 1, 1, 0.992157, 1, 0, 1, 0.129412, 1, 0, 1, 0, 0.356863, 0.407843, 1 )
 material = SubResource( 18 )
-string_val = "[\"ffb5ff52\",\"ff63ce08\",\"ff297300\",\"ff393939\"]"
+string_val = "[\"ffffffff\",\"fffdff00\",\"ff21ff00\",\"ff005b68\"]"
 is_object = true
 
 [node name="bullet" parent="Object" instance=ExtResource( 2 )]
@@ -550,5 +542,3 @@ tile_data = PoolIntArray( 0, 0, 1, 1, 0, 2, 2, 0, 0, 3, 0, 3, 4, 0, 0, 5, 0, 3, 
 [node name="palette_client" parent="CanvasLayer/Node2D/sky" instance=ExtResource( 5 )]
 palette_path = NodePath("../../../..")
 index = 6
-
-[connection signal="timeout" from="Background/water/palette_alternator/Timer" to="Background/water/palette_alternator" method="trigger"]

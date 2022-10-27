@@ -16,7 +16,8 @@ func lose():
 		return
 	
 	outcome_decided = true
-	consigna_label.visible = false
+	if is_instance_valid(consigna_label):
+		consigna_label.visible = false
 	time_left.paused = true
 	lose_anim.play("play")
 	pass
@@ -26,7 +27,9 @@ func win():
 		return
 	
 	outcome_decided = true
-	consigna_label.visible = false
+	
+	if is_instance_valid(consigna_label):
+		consigna_label.visible = false
 	win_anim.play("play")
 	spawner_timer.paused = true
 	get_tree().call_group("enemy","die")

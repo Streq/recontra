@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://src/controller/input_controller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/texture/some_autotiles.png" type="Texture" id=2]
@@ -35,29 +35,9 @@
 [ext_resource path="res://src/shooter/splash.tscn" type="PackedScene" id=33]
 [ext_resource path="res://src/pickup/sniper_pickup.tscn" type="PackedScene" id=34]
 [ext_resource path="res://src/map/fade_in.gd" type="Script" id=35]
-
-[sub_resource type="Image" id=153]
-data = {
-"data": PoolByteArray( 149, 255, 0, 255, 0, 87, 0, 255, 64, 44, 0, 255, 0, 0, 0, 255 ),
-"format": "RGBA8",
-"height": 1,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="ImageTexture" id=138]
-flags = 0
-flags = 0
-image = SubResource( 153 )
-size = Vector2( 4, 1 )
-
-[sub_resource type="ShaderMaterial" id=139]
-resource_local_to_scene = true
-shader = ExtResource( 3 )
-shader_param/palette_size = 4
-shader_param/offset = 0.0
-shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 138 )
+[ext_resource path="res://src/HUD/life_dot.tscn" type="PackedScene" id=36]
+[ext_resource path="res://src/map/life.gd" type="Script" id=37]
+[ext_resource path="res://src/global/palette_alternator.gd" type="Script" id=38]
 
 [sub_resource type="ConvexPolygonShape2D" id=84]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -393,75 +373,6 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="Image" id=154]
-data = {
-"data": PoolByteArray( 240, 188, 60, 255, 71, 58, 0, 255, 41, 28, 0, 255, 0, 0, 0, 255 ),
-"format": "RGBA8",
-"height": 1,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="ImageTexture" id=141]
-flags = 0
-flags = 0
-image = SubResource( 154 )
-size = Vector2( 4, 1 )
-
-[sub_resource type="ShaderMaterial" id=142]
-resource_local_to_scene = true
-shader = ExtResource( 3 )
-shader_param/palette_size = 4
-shader_param/offset = 0
-shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 141 )
-
-[sub_resource type="Image" id=155]
-data = {
-"data": PoolByteArray( 252, 252, 252, 255, 60, 188, 252, 255, 0, 112, 236, 255, 0, 0, 0, 255 ),
-"format": "RGBA8",
-"height": 1,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="ImageTexture" id=144]
-flags = 0
-flags = 0
-image = SubResource( 155 )
-size = Vector2( 4, 1 )
-
-[sub_resource type="ShaderMaterial" id=145]
-resource_local_to_scene = true
-shader = ExtResource( 3 )
-shader_param/palette_size = 4
-shader_param/offset = 0
-shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 144 )
-
-[sub_resource type="Image" id=156]
-data = {
-"data": PoolByteArray( 252, 252, 252, 255, 188, 188, 188, 255, 60, 188, 252, 255, 0, 0, 0, 255 ),
-"format": "RGBA8",
-"height": 1,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="ImageTexture" id=147]
-flags = 0
-flags = 0
-image = SubResource( 156 )
-size = Vector2( 4, 1 )
-
-[sub_resource type="ShaderMaterial" id=148]
-resource_local_to_scene = true
-shader = ExtResource( 3 )
-shader_param/palette_size = 4
-shader_param/offset = 0
-shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 147 )
-
 [sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 8, 200 )
 
@@ -472,7 +383,7 @@ extents = Vector2( 7.99944, 368 )
 size = 8
 font_data = ExtResource( 19 )
 
-[sub_resource type="Image" id=157]
+[sub_resource type="Image" id=244]
 data = {
 "data": PoolByteArray( 246, 231, 213, 255, 156, 156, 156, 255, 107, 107, 107, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -481,10 +392,10 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=95]
+[sub_resource type="ImageTexture" id=221]
 flags = 0
 flags = 0
-image = SubResource( 157 )
+image = SubResource( 244 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=96]
@@ -493,53 +404,30 @@ shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 95 )
+shader_param/palette = SubResource( 221 )
 
-[sub_resource type="Image" id=158]
+[sub_resource type="Image" id=245]
 data = {
-"data": PoolByteArray( 246, 231, 213, 255, 156, 156, 156, 255, 107, 107, 107, 255, 57, 57, 57, 255 ),
+"data": PoolByteArray( 255, 255, 255, 0, 117, 255, 0, 255, 8, 121, 38, 255, 0, 83, 48, 255 ),
 "format": "RGBA8",
 "height": 1,
 "mipmaps": false,
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=151]
+[sub_resource type="ImageTexture" id=242]
 flags = 0
 flags = 0
-image = SubResource( 158 )
+image = SubResource( 245 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=152]
+[sub_resource type="ShaderMaterial" id=243]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 151 )
-
-[sub_resource type="Image" id=159]
-data = {
-"data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
-"format": "RGBA8",
-"height": 1,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="ImageTexture" id=2]
-flags = 0
-flags = 0
-image = SubResource( 159 )
-size = Vector2( 4, 1 )
-
-[sub_resource type="ShaderMaterial" id=3]
-resource_local_to_scene = true
-shader = ExtResource( 3 )
-shader_param/palette_size = 4
-shader_param/offset = 0
-shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 2 )
+shader_param/palette = SubResource( 242 )
 
 [sub_resource type="Animation" id=63]
 length = 0.001
@@ -553,7 +441,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 6.0 ]
+"values": [ 0.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("spawn_source/jump_mook:weight")
@@ -565,7 +453,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 3.0 ]
+"values": [ 0.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("spawn_source/mook:weight")
@@ -577,10 +465,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 18.0 ]
+"values": [ 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("CanvasLayer2/consigna_label:visible")
+tracks/3/path = NodePath("CanvasLayer2/intro/consigna_label:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -589,10 +477,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("CanvasLayer2/consigna_label:visible_characters")
+tracks/4/path = NodePath("CanvasLayer2/intro/consigna_label:visible_characters")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -601,13 +489,13 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -1 ]
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=64]
 resource_name = "play"
 length = 90.0
-step = 5.0
+step = 1.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("spawn_source/jump_mook:weight")
 tracks/0/interp = 1
@@ -639,31 +527,31 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 10, 15, 25, 35, 45, 55, 65, 75, 85 ),
+"times": PoolRealArray( 0, 5, 15, 25, 35, 45, 55, 65, 75, 85 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("CanvasLayer2/consigna_label:visible")
+tracks/3/path = NodePath("CanvasLayer2/intro/consigna_label:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 15 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("CanvasLayer2/consigna_label:visible_characters")
+tracks/4/path = NodePath("CanvasLayer2/intro/consigna_label:visible_characters")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 10 ),
+"times": PoolRealArray( 1, 11 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 200 ]
@@ -680,20 +568,6 @@ tracks/5/keys = {
 "values": [ {
 "args": [ -1 ],
 "method": "start"
-} ]
-}
-tracks/6/type = "method"
-tracks/6/path = NodePath("fade_out")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 5 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "fade_in"
 } ]
 }
 
@@ -835,11 +709,65 @@ tracks/2/keys = {
 [sub_resource type="RectangleShape2D" id=136]
 extents = Vector2( 320, 6.5 )
 
+[sub_resource type="Animation" id=163]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer2/intro/intro_label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer2/intro/intro_label:visible_characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=164]
+resource_name = "play"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer2/intro/intro_label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer2/intro/intro_label:visible_characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.3, 1.55, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 13, 13, 60 ]
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 20 )
 
 [node name="TileMap" type="TileMap" parent="."]
-material = SubResource( 139 )
 position = Vector2( 0, 4 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
@@ -858,7 +786,6 @@ margin_bottom = 368.0
 texture = ExtResource( 30 )
 
 [node name="grass" type="TileMap" parent="."]
-material = SubResource( 139 )
 tile_set = SubResource( 101 )
 cell_size = Vector2( 32, 16 )
 format = 1
@@ -868,7 +795,6 @@ tile_data = PoolIntArray( 196608, 0, 196608, 196609, 0, 196609, 196610, 0, 19660
 index = 2
 
 [node name="rocks" type="TileMap" parent="."]
-material = SubResource( 142 )
 tile_set = SubResource( 101 )
 cell_size = Vector2( 32, 16 )
 format = 1
@@ -878,7 +804,6 @@ tile_data = PoolIntArray( 393216, 0, 393216, 393217, 0, 393216, 393218, 0, 39321
 index = 5
 
 [node name="water" type="TileMap" parent="."]
-material = SubResource( 145 )
 tile_set = SubResource( 101 )
 cell_size = Vector2( 32, 16 )
 format = 1
@@ -888,7 +813,6 @@ tile_data = PoolIntArray( 1441792, 0, 458755, 1441793, 0, 458755, 1441794, 0, 45
 index = 3
 
 [node name="sky" type="TileMap" parent="."]
-material = SubResource( 148 )
 tile_set = SubResource( 101 )
 cell_size = Vector2( 32, 16 )
 format = 1
@@ -902,7 +826,6 @@ layer = -1
 
 [node name="Sprite" type="TextureRect" parent="CanvasLayer"]
 modulate = Color( 0, 0, 0, 1 )
-material = SubResource( 145 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 6 )
@@ -1034,17 +957,14 @@ script = ExtResource( 7 )
 [node name="mook" type="Node" parent="spawn_source"]
 script = ExtResource( 4 )
 scene = ExtResource( 12 )
-weight = 18.0
 
 [node name="aim_mook" type="Node" parent="spawn_source"]
 script = ExtResource( 4 )
 scene = ExtResource( 14 )
-weight = 6.0
 
 [node name="jump_mook" type="Node" parent="spawn_source"]
 script = ExtResource( 4 )
 scene = ExtResource( 18 )
-weight = 3.0
 
 [node name="player_boundaries" type="StaticBody2D" parent="."]
 collision_layer = 0
@@ -1060,15 +980,22 @@ shape = SubResource( 57 )
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="consigna_label" type="Label" parent="CanvasLayer2"]
+[node name="intro" type="Control" parent="CanvasLayer2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="consigna_label" type="Label" parent="CanvasLayer2/intro"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -128.0
-margin_top = -20.0
+margin_top = -4.0
 margin_right = 128.0
-margin_bottom = 28.0
+margin_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -1080,9 +1007,37 @@ custom_fonts/font = SubResource( 67 )
 text = "ESTO ES TIPO VISTE 300 QUE EL CHABON SABE QUE VA A PERDER PERO IGUAL SE BANCA LOS TRAPOS? BUENO ASI, BANCATE LOS TRAPOS 90 SEGUNDOS"
 align = 1
 autowrap = true
-percent_visible = -0.00943396
+percent_visible = 0.0
 script = ExtResource( 22 )
-consignas = [ "ESTO ES TIPO VISTE 300 QUE EL CHABON SABE QUE VA A PERDER PERO IGUAL SE BANCA LOS TRAPOS? BUENO ASI, BANCATE LOS TRAPOS 90 SEGUNDOS", "VISTE EL SENIOR(NO TENGO ENIE) DE LOS ANILLOS? BUENO ESTO ES NADA QUE VER, SOBREVIVI 90 SEGUNDOS", "LA IDEA ES QUE NO TE MATEN POR 90 SEGUNDOS, VOS HACE LA TUYA MIENTRAS NO MUERAS", "EN ESTE JUEGO SOS TIPO RAMBO Y TENES QUE AGUANTAR 90 SEGUNDOS", "BANCATELA MINUTO Y MEDIO A LOS FIERRAZOS PARA GANAR", "PONELE QUE SI AGUANTAS 90 SEGUNDOS VIENE UN HELICOPTERO Y TE RESCATA" ]
+consignas = [ "ESTO ES TIPO VISTE 300 QUE EL CHABON SABE QUE VA A PERDER PERO IGUAL SE BANCA LOS TRAPOS? BUENO ASI, POR 90 SEGUNDOS", "VISTE EL SENIOR(NO TENGO ENIE) DE LOS ANILLOS? BUENO ESTO ES NADA QUE VER, SOBREVIVI 90 SEGUNDOS", "LA IDEA ES QUE NO TE MATEN POR 90 SEGUNDOS, VOS HACE LA TUYA MIENTRAS NO MUERAS", "LA JODA ES QUE SOS TIPO RAMBO Y TENES QUE AGUANTAR 90 SEGUNDOS CONTRA EL PELOTON ENEMIGO COMO EN LA PELI", "TE TENES QUE BANCAR MINUTO Y MEDIO A LOS FIERRAZOS PARA GANAR", "PONELE QUE SI AGUANTAS 90 SEGUNDOS VIENE UN HELICOPTERO Y TE RESCATA" ]
+
+[node name="intro_label" type="Label" parent="CanvasLayer2/intro"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -28.0
+margin_right = 128.0
+margin_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/line_spacing = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 0
+custom_fonts/font = SubResource( 67 )
+text = "BUENO CUCHAME, LA COSA ES ASI. SOS UN SOLDADO Y DISPARAS TIRITOS"
+align = 1
+autowrap = true
+percent_visible = 0.0
+script = ExtResource( 22 )
+consignas = [ "BUENO CUCHAME, LA COSA ES ASI. SOS UN SOLDADO Y DISPARAS TIRITOS" ]
+
+[node name="free_timer" type="Timer" parent="CanvasLayer2/intro"]
+wait_time = 3.0
 
 [node name="win_label" type="Label" parent="CanvasLayer2"]
 visible = false
@@ -1108,7 +1063,7 @@ autowrap = true
 percent_visible = 0.0
 script = ExtResource( 23 )
 consignas = [ "GANASTE!!!! AHORA EN UN RATO VIENEN LOS DE TU BANDO Y SE ARMA", "FRODO DESTRUYO EL ANILLO!!!! GANASTE!!!!!!!!!", "GANASTE!!!!!!!!! RECONTRA PIOLA ", "GANASTE!! COMO RAMBO EN LA PELI (NO SE NO LA VI)", "TE BANCASTE TODOS LOS TRAPOS QUE HABIA!! LA VERDAD SOS 1 MONSTRUO", "GANASTE!!!!! EL HELICOPTERO ESTA ACA JUSTO AFUERA DE LA PANTALLA!!" ]
-index_source = NodePath("../consigna_label")
+index_source = NodePath("../intro/consigna_label")
 
 [node name="lose_label" type="Label" parent="CanvasLayer2"]
 visible = false
@@ -1135,7 +1090,7 @@ percent_visible = 0.0
 script = ExtResource( 23 )
 consignas = [ "NO!!!! BUENO NO SE, PERDISTE", "TE RECONTRA PUSIERON", "RECONTRA PERDISTE", "MORISTE COMO RAMBO EN LA PELI (NO SE NO LA VI)", "TE BANCASTE TODOS LOS TRAPOS QUE HABIA!! LA VERDAD SOS 1 MONSTRUO.
 AH NO, PERDON, PERDISTE", "NOOOOO ESTABA RECONTRA CERCA EL HELICOPTERO" ]
-index_source = NodePath("../consigna_label")
+index_source = NodePath("../intro/consigna_label")
 
 [node name="survive_label" type="Label" parent="CanvasLayer2"]
 anchor_left = 0.5
@@ -1161,6 +1116,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="dead_enemies" type="Label" parent="CanvasLayer2"]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -300.0
@@ -1213,7 +1169,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2/HBoxContainer"]
-material = SubResource( 152 )
 margin_left = 36.0
 margin_right = 52.0
 margin_bottom = 16.0
@@ -1222,7 +1177,6 @@ texture = ExtResource( 26 )
 [node name="palette_client" parent="CanvasLayer2/HBoxContainer/TextureRect" instance=ExtResource( 5 )]
 
 [node name="weapon_texture" type="TextureRect" parent="CanvasLayer2/HBoxContainer/TextureRect"]
-material = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 27 )
@@ -1233,18 +1187,28 @@ script = ExtResource( 28 )
 [node name="palette_client" parent="CanvasLayer2/HBoxContainer/TextureRect/weapon_texture" instance=ExtResource( 5 )]
 type = 1
 
+[node name="life" type="HBoxContainer" parent="CanvasLayer2"]
+material = SubResource( 243 )
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 196.0
+margin_bottom = 24.0
+script = ExtResource( 37 )
+dot = ExtResource( 36 )
+player_path = NodePath("../../soldier")
+
 [node name="time_left" type="Timer" parent="."]
 process_mode = 0
 wait_time = 90.0
 one_shot = true
 
 [node name="spawn_odds_change_animation" type="AnimationPlayer" parent="."]
-autoplay = "play"
 playback_process_mode = 0
 anims/RESET = SubResource( 63 )
 anims/play = SubResource( 64 )
 
 [node name="win_anim" type="AnimationPlayer" parent="."]
+playback_process_mode = 0
 anims/RESET = SubResource( 76 )
 anims/play = SubResource( 85 )
 
@@ -1265,6 +1229,21 @@ shape = SubResource( 136 )
 
 [node name="fade_out" type="Node" parent="."]
 script = ExtResource( 35 )
+delay_obj_bg = 0.0
+
+[node name="intro_anim" type="AnimationPlayer" parent="."]
+autoplay = "play"
+playback_process_mode = 0
+playback_speed = 2.0
+anims/RESET = SubResource( 163 )
+anims/play = SubResource( 164 )
+
+[node name="palette_alternator" type="Node" parent="."]
+script = ExtResource( 38 )
+palette_index = 3
+
+[node name="water_timer" type="Timer" parent="palette_alternator"]
+wait_time = 0.5
 
 [connection signal="dead_enemies_changed" from="." to="CanvasLayer2/dead_enemies" method="update_text"]
 [connection signal="spawn" from="spawner" to="." method="_on_spawner_spawn"]
@@ -1273,5 +1252,14 @@ script = ExtResource( 35 )
 [connection signal="die" from="soldier" to="." method="_on_soldier_die"]
 [connection signal="weapon_change" from="soldier" to="CanvasLayer2/HBoxContainer/TextureRect/weapon_texture" method="_on_weapon_change"]
 [connection signal="body_entered" from="despawn_zone" to="despawn_zone" method="_on_despawn_zone_body_entered"]
+[connection signal="fully_visible" from="CanvasLayer2/intro/consigna_label" to="CanvasLayer2/intro/free_timer" method="start"]
+[connection signal="fully_visible" from="CanvasLayer2/intro/intro_label" to="spawn_odds_change_animation" method="play" binds= [ "play" ]]
+[connection signal="fully_visible" from="CanvasLayer2/intro/intro_label" to="fade_out" method="fade_in"]
+[connection signal="timeout" from="CanvasLayer2/intro/free_timer" to="CanvasLayer2/intro" method="queue_free"]
 [connection signal="timeout" from="time_left" to="." method="_on_time_left_timeout"]
 [connection signal="body_entered" from="splash_zone" to="splash_zone" method="_on_body_entered"]
+[connection signal="finished_fade_in" from="fade_out" to="palette_alternator/water_timer" method="start"]
+[connection signal="finished_fade_out" from="fade_out" to="palette_alternator/water_timer" method="start"]
+[connection signal="started_fade_in" from="fade_out" to="palette_alternator/water_timer" method="stop"]
+[connection signal="started_fade_out" from="fade_out" to="palette_alternator/water_timer" method="stop"]
+[connection signal="timeout" from="palette_alternator/water_timer" to="palette_alternator" method="trigger"]

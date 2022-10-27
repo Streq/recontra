@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/texture/pokemon/boundaries.png" type="Texture" id=7]
 [ext_resource path="res://assets/font/Plotter/PC/Plotter Condensed.ttf" type="DynamicFontData" id=8]
 
-[sub_resource type="Image" id=36]
+[sub_resource type="Image" id=225]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -18,44 +18,44 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=2]
+[sub_resource type="ImageTexture" id=213]
 flags = 0
 flags = 0
-image = SubResource( 36 )
+image = SubResource( 225 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=155]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 2 )
+shader_param/palette = SubResource( 213 )
 
-[sub_resource type="Image" id=37]
+[sub_resource type="Image" id=226]
 data = {
-"data": PoolByteArray( 246, 231, 213, 255, 140, 156, 255, 255, 122, 132, 255, 255, 57, 57, 57, 255 ),
+"data": PoolByteArray( 252, 252, 252, 255, 188, 188, 188, 255, 60, 188, 252, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
 "height": 1,
 "mipmaps": false,
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=25]
+[sub_resource type="ImageTexture" id=147]
 flags = 0
 flags = 0
-image = SubResource( 37 )
+image = SubResource( 226 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=26]
+[sub_resource type="ShaderMaterial" id=148]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 25 )
+shader_param/palette = SubResource( 147 )
 
-[sub_resource type="Image" id=38]
+[sub_resource type="Image" id=227]
 data = {
 "data": PoolByteArray( 246, 231, 213, 255, 255, 156, 198, 255, 247, 82, 49, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -64,21 +64,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=28]
+[sub_resource type="ImageTexture" id=217]
 flags = 0
 flags = 0
-image = SubResource( 38 )
+image = SubResource( 227 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=29]
+[sub_resource type="ShaderMaterial" id=218]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 28 )
+shader_param/palette = SubResource( 217 )
 
-[sub_resource type="Image" id=39]
+[sub_resource type="Image" id=228]
 data = {
 "data": PoolByteArray( 254, 254, 133, 255, 254, 254, 133, 255, 115, 74, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -87,21 +87,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=31]
+[sub_resource type="ImageTexture" id=220]
 flags = 0
 flags = 0
-image = SubResource( 39 )
+image = SubResource( 228 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=32]
+[sub_resource type="ShaderMaterial" id=221]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 31 )
+shader_param/palette = SubResource( 220 )
 
-[sub_resource type="Image" id=40]
+[sub_resource type="Image" id=229]
 data = {
 "data": PoolByteArray( 246, 231, 213, 255, 255, 255, 57, 255, 255, 132, 8, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -110,19 +110,19 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=34]
+[sub_resource type="ImageTexture" id=223]
 flags = 0
 flags = 0
-image = SubResource( 40 )
+image = SubResource( 229 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=35]
+[sub_resource type="ShaderMaterial" id=224]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 34 )
+shader_param/palette = SubResource( 223 )
 
 [sub_resource type="DynamicFont" id=22]
 size = 8
@@ -131,7 +131,7 @@ font_data = ExtResource( 8 )
 [node name="Node2D" type="Node2D"]
 
 [node name="red" type="Sprite" parent="."]
-material = SubResource( 3 )
+material = SubResource( 155 )
 texture = ExtResource( 2 )
 centered = false
 
@@ -139,7 +139,7 @@ centered = false
 type = 1
 
 [node name="wooden" type="Sprite" parent="."]
-material = SubResource( 26 )
+material = SubResource( 148 )
 texture = ExtResource( 6 )
 centered = false
 
@@ -147,7 +147,7 @@ centered = false
 index = 6
 
 [node name="grey" type="Sprite" parent="."]
-material = SubResource( 29 )
+material = SubResource( 218 )
 texture = ExtResource( 5 )
 centered = false
 
@@ -155,7 +155,7 @@ centered = false
 index = 1
 
 [node name="outside" type="Sprite" parent="."]
-material = SubResource( 32 )
+material = SubResource( 221 )
 texture = ExtResource( 7 )
 centered = false
 
@@ -163,7 +163,7 @@ centered = false
 index = 7
 
 [node name="tv" type="Sprite" parent="."]
-material = SubResource( 35 )
+material = SubResource( 224 )
 texture = ExtResource( 4 )
 centered = false
 

@@ -30,6 +30,7 @@ onready var pivot: Node2D = $pivot
 onready var state_machine: Node = $state_machine
 onready var palette_client: Node = $pivot/Sprite/palette_client
 onready var gun_hold: Node2D = $pivot/gun_pivot/gun_hold
+onready var health: Node = $health
 
 export var facing_dir = 1.0 setget set_facing_dir
 

@@ -13,3 +13,5 @@ func change_palette(type: int, index: int, by: PoolColorArray) -> void:
 func get_palette_material(type: int, index: int) -> Material:
 	return palettes[type][index].material
 
+func get_palette(type: int, index: int):
+	return palettes[type][index]

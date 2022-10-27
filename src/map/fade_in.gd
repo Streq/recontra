@@ -1,4 +1,8 @@
 extends Node
+signal finished_fade_in()
+signal started_fade_in()
+signal finished_fade_out()
+signal started_fade_out()
 
 var base_bg = []
 var base_obj = []
@@ -8,7 +12,7 @@ export var fade_in_step_time := 1.0
 export var fade_out_step_time := 1.0
 	
 func fade_in():
-	
+	emit_signal("started_fade_in")
 	fade_in_obj()
 	yield(get_tree().create_timer(delay_obj_bg),"timeout")
 	fade_in_bg()
@@ -24,6 +28,7 @@ func fade_in_bg():
 					background_palette.palette, 
 					shift_color
 				)[0]
+	emit_signal("finished_fade_in")
 
 func fade_in_obj():
 	var object_palettes = GlobalPalette.object_palettes
@@ -36,8 +41,9 @@ func fade_in_obj():
 					object_palette.palette, 
 					shift_color
 				)[0]
-	
+		
 func fade_out():
+	emit_signal("started_fade_out")
 	fade_out_bg()
 	yield(get_tree().create_timer(delay_obj_bg),"timeout")
 	fade_out_obj()
@@ -59,6 +65,7 @@ func fade_out_obj():
 			var p : Palette = palette
 			p.palette = ColorUtils.shift_palette_left(p.palette, black)[0]
 	
+	emit_signal("finished_fade_out")
 	pass
 
 func blackout():
