@@ -419,7 +419,27 @@ material = SubResource( 253 )
 index = 2
 
 [node name="gun" parent="pivot/gun_pivot/gun_hold" index="0" instance=ExtResource( 4 )]
+__meta__ = {
+"_edit_pinned_properties_": [ "cooldown" ]
+}
 cooldown = 0.75
+
+[node name="muzzle" parent="pivot/gun_pivot/gun_hold/gun" index="1"]
+__meta__ = {
+"_edit_pinned_properties_": [ "base_shoot_speed", "override_drag", "override_movement_threshold_squared", "override_scale", "override_targets_hit_before_despawn", "override_knockback", "time_between_shots", "recoil", "carried_inertia_from_shooter", "spread_degrees", "amount", "rand_added_speed" ]
+}
+base_shoot_speed = 225.0
+rand_added_speed = 0.0
+amount = 1
+spread_degrees = 0.0
+carried_inertia_from_shooter = 0.1
+recoil = 0.0
+override_drag = -1.0
+override_movement_threshold_squared = -1.0
+override_scale = Vector2( 0, 0 )
+override_targets_hit_before_despawn = 0
+override_knockback = -1.0
+time_between_shots = 0.0
 
 [node name="target_detect" type="Area2D" parent="pivot" index="3"]
 collision_layer = 0
@@ -489,6 +509,7 @@ chances = 0.25
 
 [node name="fall_sound" type="AudioStreamPlayer2D" parent="." index="12"]
 stream = ExtResource( 16 )
+bus = "sfx"
 script = ExtResource( 17 )
 threshold_speed = 200.0
 

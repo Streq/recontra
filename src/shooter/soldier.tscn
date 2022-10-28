@@ -28,7 +28,7 @@
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 4, 7 )
 
-[sub_resource type="Image" id=274]
+[sub_resource type="Image" id=280]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -37,19 +37,19 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=268]
+[sub_resource type="ImageTexture" id=275]
 flags = 0
 flags = 0
-image = SubResource( 274 )
+image = SubResource( 280 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=269]
+[sub_resource type="ShaderMaterial" id=276]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 268 )
+shader_param/palette = SubResource( 275 )
 
 [sub_resource type="RectangleShape2D" id=95]
 extents = Vector2( 5.5, 5.5 )
@@ -515,7 +515,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Image" id=275]
+[sub_resource type="Image" id=281]
 data = {
 "data": PoolByteArray( 149, 255, 0, 255, 0, 87, 0, 255, 64, 44, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -524,19 +524,19 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=249]
+[sub_resource type="ImageTexture" id=278]
 flags = 0
 flags = 0
-image = SubResource( 275 )
+image = SubResource( 281 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=250]
+[sub_resource type="ShaderMaterial" id=279]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 0.0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 249 )
+shader_param/palette = SubResource( 278 )
 
 [sub_resource type="AtlasTexture" id=110]
 flags = 2
@@ -590,7 +590,8 @@ shape = SubResource( 93 )
 [node name="pivot" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="pivot"]
-material = SubResource( 269 )
+visible = false
+material = SubResource( 276 )
 texture = ExtResource( 12 )
 hframes = 3
 vframes = 2
@@ -686,7 +687,7 @@ value = 16.0
 
 [node name="hud_bar" type="TextureProgress" parent="."]
 visible = false
-material = SubResource( 250 )
+material = SubResource( 279 )
 margin_left = -8.0
 margin_top = -11.0
 margin_right = 8.0
@@ -708,18 +709,21 @@ anims/play = SubResource( 118 )
 
 [node name="got_hit_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
+bus = "sfx"
 
 [node name="hit_the_ground_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 23 )
+bus = "sfx"
 
 [node name="blindado" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 24 )
+bus = "sfx"
 
 [connection signal="die" from="." to="pivot/gun_pivot" method="disable"]
 [connection signal="die" from="." to="hud_bar" method="hide"]
 [connection signal="took_damage" from="." to="health" method="subtract"]
 [connection signal="took_hit" from="." to="got_hit_sound" method="play"]
 [connection signal="entered" from="state_machine/dead" to="death_free_anim" method="play"]
-[connection signal="entered" from="state_machine/dead" to="hit_the_ground_sound" method="play"]
+[connection signal="hit_the_ground_hard" from="state_machine/dead_air" to="hit_the_ground_sound" method="play"]
 [connection signal="empty" from="health" to="." method="die"]
 [connection signal="value_changed" from="health" to="hud_bar" method="_value_changed"]

@@ -4,11 +4,13 @@
 [ext_resource path="res://src/shooter/decrease_accuracy_while_shooting.gd" type="Script" id=2]
 
 [node name="uzi" instance=ExtResource( 1 )]
+__meta__ = {
+"_edit_pinned_properties_": [ "cooldown" ]
+}
 cooldown = 0.1
 automatic = true
 
 [node name="muzzle" parent="." index="1"]
-base_shoot_speed = 750.0
 spread_degrees = 5.0
 recoil = 25.0
 override_drag = 6.0

@@ -43,5 +43,6 @@ index = 5
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
+bus = "sfx"
 
 [connection signal="timeout" from="Timer" to="." method="queue_free"]

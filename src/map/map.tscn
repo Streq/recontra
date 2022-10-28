@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://src/controller/input_controller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/texture/some_autotiles.png" type="Texture" id=2]
@@ -39,8 +39,13 @@
 [ext_resource path="res://src/map/life.gd" type="Script" id=37]
 [ext_resource path="res://src/global/palette_alternator.gd" type="Script" id=38]
 [ext_resource path="res://assets/texture/dither.png" type="Texture" id=39]
+[ext_resource path="res://assets/audio/music/01 Contra (Title).mp3" type="AudioStream" id=40]
+[ext_resource path="res://assets/audio/music/03 Jungle Battle (Stage 1, 7).mp3" type="AudioStream" id=41]
+[ext_resource path="res://assets/audio/music/13 Game Over.mp3" type="AudioStream" id=42]
+[ext_resource path="res://assets/audio/music/04 Triumphant Return 1 (Stage Clear).mp3" type="AudioStream" id=43]
+[ext_resource path="res://src/pickup/gun_pickup.tscn" type="PackedScene" id=44]
 
-[sub_resource type="Image" id=270]
+[sub_resource type="Image" id=297]
 data = {
 "data": PoolByteArray( 149, 255, 0, 255, 0, 87, 0, 255, 64, 44, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -49,19 +54,19 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=249]
+[sub_resource type="ImageTexture" id=278]
 flags = 0
 flags = 0
-image = SubResource( 270 )
+image = SubResource( 297 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=250]
+[sub_resource type="ShaderMaterial" id=279]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0.0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 249 )
+shader_param/palette = SubResource( 278 )
 
 [sub_resource type="ConvexPolygonShape2D" id=84]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -397,7 +402,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="Image" id=271]
+[sub_resource type="Image" id=298]
 data = {
 "data": PoolByteArray( 240, 188, 60, 255, 71, 58, 0, 255, 41, 28, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -406,21 +411,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=252]
+[sub_resource type="ImageTexture" id=282]
 flags = 0
 flags = 0
-image = SubResource( 271 )
+image = SubResource( 298 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=253]
+[sub_resource type="ShaderMaterial" id=283]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 252 )
+shader_param/palette = SubResource( 282 )
 
-[sub_resource type="Image" id=272]
+[sub_resource type="Image" id=299]
 data = {
 "data": PoolByteArray( 252, 252, 252, 255, 60, 188, 252, 255, 0, 112, 236, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -429,21 +434,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=255]
+[sub_resource type="ImageTexture" id=285]
 flags = 0
 flags = 0
-image = SubResource( 272 )
+image = SubResource( 299 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=256]
+[sub_resource type="ShaderMaterial" id=286]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 255 )
+shader_param/palette = SubResource( 285 )
 
-[sub_resource type="Image" id=273]
+[sub_resource type="Image" id=300]
 data = {
 "data": PoolByteArray( 252, 252, 252, 255, 188, 188, 188, 255, 60, 188, 252, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -452,19 +457,19 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=258]
+[sub_resource type="ImageTexture" id=288]
 flags = 0
 flags = 0
-image = SubResource( 273 )
+image = SubResource( 300 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=259]
+[sub_resource type="ShaderMaterial" id=289]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 258 )
+shader_param/palette = SubResource( 288 )
 
 [sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 8, 200 )
@@ -476,7 +481,7 @@ extents = Vector2( 7.99944, 368 )
 size = 8
 font_data = ExtResource( 19 )
 
-[sub_resource type="Image" id=274]
+[sub_resource type="Image" id=301]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 78, 74, 255, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -485,21 +490,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=261]
+[sub_resource type="ImageTexture" id=291]
 flags = 0
 flags = 0
-image = SubResource( 274 )
+image = SubResource( 301 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=262]
+[sub_resource type="ShaderMaterial" id=292]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 261 )
+shader_param/palette = SubResource( 291 )
 
-[sub_resource type="Image" id=275]
+[sub_resource type="Image" id=302]
 data = {
 "data": PoolByteArray( 246, 231, 213, 255, 156, 156, 156, 255, 107, 107, 107, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -511,7 +516,7 @@ data = {
 [sub_resource type="ImageTexture" id=221]
 flags = 0
 flags = 0
-image = SubResource( 275 )
+image = SubResource( 302 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=96]
@@ -522,7 +527,7 @@ shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
 shader_param/palette = SubResource( 221 )
 
-[sub_resource type="Image" id=276]
+[sub_resource type="Image" id=303]
 data = {
 "data": PoolByteArray( 246, 231, 213, 255, 156, 156, 156, 255, 107, 107, 107, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -531,21 +536,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=265]
+[sub_resource type="ImageTexture" id=295]
 flags = 0
 flags = 0
-image = SubResource( 276 )
+image = SubResource( 303 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=266]
+[sub_resource type="ShaderMaterial" id=296]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 265 )
+shader_param/palette = SubResource( 295 )
 
-[sub_resource type="Image" id=277]
+[sub_resource type="Image" id=304]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -554,21 +559,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=268]
+[sub_resource type="ImageTexture" id=275]
 flags = 0
 flags = 0
-image = SubResource( 277 )
+image = SubResource( 304 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=269]
+[sub_resource type="ShaderMaterial" id=276]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 268 )
+shader_param/palette = SubResource( 275 )
 
-[sub_resource type="Image" id=278]
+[sub_resource type="Image" id=305]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 117, 255, 0, 255, 8, 121, 38, 255, 0, 83, 48, 255 ),
 "format": "RGBA8",
@@ -580,7 +585,7 @@ data = {
 [sub_resource type="ImageTexture" id=242]
 flags = 0
 flags = 0
-image = SubResource( 278 )
+image = SubResource( 305 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=243]
@@ -773,7 +778,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=85]
-length = 3.5
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer2/win_label:visible")
 tracks/0/interp = 1
@@ -798,12 +803,36 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 0, 100 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("stage_clear_music:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("music:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=246]
 length = 0.001
 
 [sub_resource type="Animation" id=247]
-length = 1.5
+length = 2.5
 tracks/0/type = "method"
 tracks/0/path = NodePath("fade_out")
 tracks/0/interp = 1
@@ -814,7 +843,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ true, 0.1 ],
+"args": [ true, 0.25 ],
 "method": "fade_out"
 } ]
 }
@@ -848,7 +877,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=81]
 resource_name = "play"
-length = 4.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer2/lose_label:visible_characters")
 tracks/0/interp = 1
@@ -886,6 +915,30 @@ tracks/2/keys = {
 "args": [ false ],
 "method": "fade_out"
 } ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("music:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("game_over_music:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="RectangleShape2D" id=136]
@@ -951,7 +1004,7 @@ position = Vector2( 0, -8 )
 script = ExtResource( 20 )
 
 [node name="TileMap" type="TileMap" parent="."]
-material = SubResource( 250 )
+material = SubResource( 279 )
 position = Vector2( 0, 4 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
@@ -970,7 +1023,7 @@ anchor_bottom = 1.0
 texture = ExtResource( 30 )
 
 [node name="grass" type="TileMap" parent="."]
-material = SubResource( 250 )
+material = SubResource( 279 )
 tile_set = SubResource( 101 )
 cell_size = Vector2( 32, 16 )
 format = 1
@@ -980,7 +1033,7 @@ tile_data = PoolIntArray( 196608, 0, 196608, 196609, 0, 196609, 196610, 0, 19660
 index = 2
 
 [node name="rocks" type="TileMap" parent="."]
-material = SubResource( 253 )
+material = SubResource( 283 )
 tile_set = SubResource( 101 )
 cell_size = Vector2( 32, 16 )
 format = 1
@@ -990,7 +1043,7 @@ tile_data = PoolIntArray( 393216, 0, 393216, 393217, 0, 393216, 393218, 0, 39321
 index = 5
 
 [node name="water" type="TileMap" parent="."]
-material = SubResource( 256 )
+material = SubResource( 286 )
 tile_set = SubResource( 101 )
 cell_size = Vector2( 32, 16 )
 format = 1
@@ -1000,7 +1053,7 @@ tile_data = PoolIntArray( 1441792, 0, 458755, 1441793, 0, 458755, 1441794, 0, 45
 index = 3
 
 [node name="sky" type="TileMap" parent="."]
-material = SubResource( 259 )
+material = SubResource( 289 )
 tile_set = SubResource( 101 )
 cell_size = Vector2( 32, 16 )
 format = 1
@@ -1014,7 +1067,7 @@ layer = -1
 
 [node name="Sprite" type="TextureRect" parent="CanvasLayer"]
 modulate = Color( 0, 0, 0, 1 )
-material = SubResource( 256 )
+material = SubResource( 286 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 6 )
@@ -1107,17 +1160,19 @@ script = ExtResource( 7 )
 [node name="shotgun" type="Node" parent="soldier/starting_weapon/drop_table"]
 script = ExtResource( 4 )
 scene = ExtResource( 17 )
+
+[node name="gun" type="Node" parent="soldier/starting_weapon/drop_table"]
+script = ExtResource( 4 )
+scene = ExtResource( 44 )
 weight = 5.0
 
 [node name="uzi" type="Node" parent="soldier/starting_weapon/drop_table"]
 script = ExtResource( 4 )
 scene = ExtResource( 24 )
-weight = 5.0
 
 [node name="burst" type="Node" parent="soldier/starting_weapon/drop_table"]
 script = ExtResource( 4 )
 scene = ExtResource( 16 )
-weight = 5.0
 
 [node name="sniper" type="Node" parent="soldier/starting_weapon/drop_table"]
 script = ExtResource( 4 )
@@ -1214,7 +1269,7 @@ custom_constants/margin_bottom = -8
 
 [node name="fade_rect" type="TextureRect" parent="CanvasLayer2/intro/intro_label/MarginContainer"]
 show_behind_parent = true
-material = SubResource( 262 )
+material = SubResource( 292 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 264.0
@@ -1263,7 +1318,7 @@ custom_constants/margin_bottom = -8
 
 [node name="fade_rect" type="TextureRect" parent="CanvasLayer2/intro/consigna_label/MarginContainer"]
 show_behind_parent = true
-material = SubResource( 262 )
+material = SubResource( 292 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 264.0
@@ -1316,7 +1371,7 @@ custom_constants/margin_bottom = -8
 
 [node name="fade_rect" type="TextureRect" parent="CanvasLayer2/win_label/MarginContainer"]
 show_behind_parent = true
-material = SubResource( 262 )
+material = SubResource( 292 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 248.0
@@ -1367,7 +1422,7 @@ custom_constants/margin_bottom = -8
 
 [node name="fade_rect" type="TextureRect" parent="CanvasLayer2/lose_label/MarginContainer"]
 show_behind_parent = true
-material = SubResource( 262 )
+material = SubResource( 292 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 248.0
@@ -1451,7 +1506,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2/HBoxContainer"]
-material = SubResource( 266 )
+material = SubResource( 296 )
 margin_left = 36.0
 margin_right = 52.0
 margin_bottom = 16.0
@@ -1460,7 +1515,7 @@ texture = ExtResource( 26 )
 [node name="palette_client" parent="CanvasLayer2/HBoxContainer/TextureRect" instance=ExtResource( 5 )]
 
 [node name="weapon_texture" type="TextureRect" parent="CanvasLayer2/HBoxContainer/TextureRect"]
-material = SubResource( 269 )
+material = SubResource( 276 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 27 )
@@ -1552,6 +1607,28 @@ palette_index = 3
 [node name="water_timer" type="Timer" parent="palette_alternator"]
 wait_time = 0.5
 
+[node name="intro_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 40 )
+autoplay = true
+bus = "music"
+
+[node name="game_over_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 42 )
+bus = "music"
+
+[node name="stage_clear_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 43 )
+bus = "music"
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 41 )
+bus = "music"
+
+[node name="Timer" type="Timer" parent="music"]
+process_mode = 0
+wait_time = 0.5
+one_shot = true
+
 [connection signal="dead_enemies_changed" from="." to="CanvasLayer2/dead_enemies" method="update_text"]
 [connection signal="spawn" from="spawner" to="." method="_on_spawner_spawn"]
 [connection signal="timeout" from="spawner/Timer" to="spawner" method="spawn"]
@@ -1571,3 +1648,5 @@ wait_time = 0.5
 [connection signal="started_fade_in" from="fade_out" to="palette_alternator/water_timer" method="stop"]
 [connection signal="started_fade_out" from="fade_out" to="palette_alternator/water_timer" method="stop"]
 [connection signal="timeout" from="palette_alternator/water_timer" to="palette_alternator" method="trigger"]
+[connection signal="finished" from="intro_music" to="music/Timer" method="start"]
+[connection signal="timeout" from="music/Timer" to="music" method="play"]

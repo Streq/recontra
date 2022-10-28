@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/03 Jungle Battle (Stage 1, 7).mp3-9bedf367cbf11232d71212eff53db49c.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/03 Jungle Battle (Stage 1, 7).mp3"
+dest_files=[ "res://.import/03 Jungle Battle (Stage 1, 7).mp3-9bedf367cbf11232d71212eff53db49c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

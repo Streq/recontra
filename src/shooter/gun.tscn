@@ -33,7 +33,7 @@ shader_param/palette = SubResource( 2 )
 
 [node name="gun" type="Node2D"]
 script = ExtResource( 5 )
-cooldown = 0.5
+cooldown = 0.2
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 3 )
@@ -47,15 +47,17 @@ index = 3
 [node name="muzzle" type="Node2D" parent="."]
 position = Vector2( 11, 0 )
 script = ExtResource( 6 )
-base_shoot_speed = 225.0
+base_shoot_speed = 750.0
 rand_added_speed = 0.0
 amount = 1
 spread_degrees = 0.0
 carried_inertia_from_shooter = 0.1
+override_drag = 5.0
 BULLET = ExtResource( 3 )
 
 [node name="gunshot_sound" type="AudioStreamPlayer2D" parent="muzzle"]
 stream = ExtResource( 7 )
+bus = "sfx"
 
 [node name="cooldown" type="Timer" parent="."]
 process_mode = 0

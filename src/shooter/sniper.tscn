@@ -63,6 +63,7 @@ BULLET = ExtResource( 3 )
 
 [node name="gunshot_sound" type="AudioStreamPlayer2D" parent="muzzle"]
 stream = ExtResource( 9 )
+bus = "sfx"
 
 [node name="cooldown" type="Timer" parent="."]
 process_mode = 0

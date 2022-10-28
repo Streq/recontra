@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/01 Contra (Title).mp3-16f8fb76b2228f4ec9cb4786f38228a0.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/01 Contra (Title).mp3"
+dest_files=[ "res://.import/01 Contra (Title).mp3-16f8fb76b2228f4ec9cb4786f38228a0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

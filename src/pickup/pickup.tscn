@@ -140,6 +140,7 @@ anims/play = SubResource( 124 )
 
 [node name="pickup_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
+bus = "sfx"
 
 [connection signal="body_entered" from="player_detect" to="." method="_on_player_detect_body_entered"]
 [connection signal="timeout" from="lifetime" to="." method="queue_free"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/04 Triumphant Return 1 (Stage Clear).mp3-9c3719a1dfa279635a1dc72b811ec363.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/04 Triumphant Return 1 (Stage Clear).mp3"
+dest_files=[ "res://.import/04 Triumphant Return 1 (Stage Clear).mp3-9c3719a1dfa279635a1dc72b811ec363.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

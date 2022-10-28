@@ -2,8 +2,8 @@ extends Node
 
 func _unhandled_input(event: InputEvent) -> void:
 	
-	if event.is_action_pressed("exit"):
-		get_tree().quit()
+#	if event.is_action_pressed("exit"):
+#		get_tree().quit()
 	if event.is_action_pressed("fullscreen"):
 		change_fullscreen()
 	if event.is_action_pressed("restart") and OS.is_debug_build():
