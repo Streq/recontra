@@ -452,32 +452,32 @@ script = ExtResource( 7 )
 [node name="shotgun" type="Node" parent="drop_on_death/drop_table" index="0"]
 script = ExtResource( 2 )
 scene = ExtResource( 9 )
-weight = 5.0
+weight = 7.5
 
 [node name="sniper" type="Node" parent="drop_on_death/drop_table" index="1"]
 script = ExtResource( 2 )
 scene = ExtResource( 13 )
-weight = 5.0
+weight = 7.5
 
 [node name="uzi" type="Node" parent="drop_on_death/drop_table" index="2"]
 script = ExtResource( 2 )
 scene = ExtResource( 12 )
-weight = 5.0
+weight = 7.5
 
 [node name="burst" type="Node" parent="drop_on_death/drop_table" index="3"]
 script = ExtResource( 2 )
 scene = ExtResource( 10 )
-weight = 5.0
+weight = 7.5
 
 [node name="health_up" type="Node" parent="drop_on_death/drop_table" index="4"]
 script = ExtResource( 5 )
 scene = ExtResource( 11 )
-weight = 10.0
+weight = 15.0
 
 [node name="shield" type="Node" parent="drop_on_death/drop_table" index="5"]
 script = ExtResource( 19 )
 scene = ExtResource( 18 )
-weight = 5.0
+weight = 10.0
 
 [node name="nothing" type="Node" parent="drop_on_death/drop_table" index="6"]
 script = ExtResource( 5 )
