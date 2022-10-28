@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://src/controller/input_controller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/map/maps/map_bridge.tscn" type="PackedScene" id=2]
@@ -45,6 +45,7 @@
 [ext_resource path="res://assets/audio/music/04 Triumphant Return 1 (Stage Clear).mp3" type="AudioStream" id=43]
 [ext_resource path="res://src/pickup/gun_pickup.tscn" type="PackedScene" id=44]
 [ext_resource path="res://src/map/maps/map_no_bridge.tscn" type="PackedScene" id=45]
+[ext_resource path="res://src/map/add_controls_text.gd" type="Script" id=46]
 
 [sub_resource type="Image" id=297]
 data = {
@@ -70,7 +71,7 @@ shader_param/blue_index_offset = 0.0
 shader_param/palette = SubResource( 285 )
 
 [sub_resource type="RectangleShape2D" id=57]
-extents = Vector2( 8, 200 )
+extents = Vector2( 8, 336 )
 
 [sub_resource type="RectangleShape2D" id=128]
 extents = Vector2( 7.99944, 368 )
@@ -628,6 +629,7 @@ texture = ExtResource( 30 )
 layer = -1
 
 [node name="Sprite" type="TextureRect" parent="CanvasLayer"]
+visible = false
 modulate = Color( 0, 0, 0, 1 )
 material = SubResource( 286 )
 anchor_right = 1.0
@@ -782,6 +784,11 @@ collision_mask = 8
 position = Vector2( -8, 184 )
 shape = SubResource( 57 )
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="player_boundaries"]
+position = Vector2( 320, -52 )
+rotation = 1.57079
+shape = SubResource( 57 )
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="player_boundaries"]
 position = Vector2( 648, 184 )
 shape = SubResource( 57 )
@@ -852,9 +859,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -128.0
-margin_top = 4.0
+margin_top = 11.0
 margin_right = 128.0
-margin_bottom = 52.0
+margin_bottom = 92.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -863,7 +870,7 @@ custom_constants/line_spacing = 1
 custom_constants/shadow_offset_y = 1
 custom_constants/shadow_as_outline = 0
 custom_fonts/font = SubResource( 67 )
-text = "ESTO ES TIPO VISTE 300 QUE EL CHABON SABE QUE VA A PERDER PERO IGUAL SE BANCA LOS TRAPOS? BUENO ASI, BANCATE LOS TRAPOS 90 SEGUNDOS"
+text = "ESTO ES TIPO VISTE 300 QUE EL CHABON SABE QUE VA A PERDER PERO IGUAL SE BANCA LOS TRAPOS? BUENO ASI, BANCATE LOS TRAPOS 90 SEGUNDOS."
 align = 1
 autowrap = true
 percent_visible = 0.0
@@ -874,6 +881,8 @@ consignas = [ "ESTO ES TIPO VISTE 300 QUE EL CHABON SABE QUE VA A PERDER PERO IG
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
 custom_constants/margin_right = -8
 custom_constants/margin_top = -8
 custom_constants/margin_left = -8
@@ -885,7 +894,7 @@ material = SubResource( 292 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 264.0
-margin_bottom = 56.0
+margin_bottom = 89.0
 texture = ExtResource( 39 )
 expand = true
 stretch_mode = 2
@@ -893,6 +902,9 @@ stretch_mode = 2
 [node name="palette_client" parent="CanvasLayer2/intro/consigna_label/MarginContainer/fade_rect" instance=ExtResource( 5 )]
 type = 1
 index = 1
+
+[node name="add_controls_text" type="Node" parent="CanvasLayer2/intro/consigna_label"]
+script = ExtResource( 46 )
 
 [node name="free_timer" type="Timer" parent="CanvasLayer2/intro"]
 wait_time = 3.0
