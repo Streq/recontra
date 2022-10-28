@@ -577,7 +577,7 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true, false, true, false, true, false ]
 }
 
-[node name="soldier" type="KinematicBody2D"]
+[node name="soldier2" type="KinematicBody2D"]
 collision_mask = 2
 script = ExtResource( 11 )
 gravity = 250.0
