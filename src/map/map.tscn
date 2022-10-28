@@ -1088,6 +1088,7 @@ autostart = true
 
 [node name="decrease_wait_time_with_time" type="Node" parent="spawner/Timer"]
 script = ExtResource( 15 )
+min_time = 0.75
 time_step = 0.166667
 
 [node name="Timer" type="Timer" parent="spawner/Timer/decrease_wait_time_with_time"]
@@ -1607,20 +1608,20 @@ palette_index = 3
 [node name="water_timer" type="Timer" parent="palette_alternator"]
 wait_time = 0.5
 
-[node name="intro_music" type="AudioStreamPlayer2D" parent="."]
+[node name="intro_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 40 )
 autoplay = true
 bus = "music"
 
-[node name="game_over_music" type="AudioStreamPlayer2D" parent="."]
+[node name="game_over_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 42 )
 bus = "music"
 
-[node name="stage_clear_music" type="AudioStreamPlayer2D" parent="."]
+[node name="stage_clear_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 43 )
 bus = "music"
 
-[node name="music" type="AudioStreamPlayer2D" parent="."]
+[node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 41 )
 bus = "music"
 

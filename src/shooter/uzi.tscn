@@ -19,6 +19,7 @@ override_drag = 6.0
 script = ExtResource( 2 )
 max_accumulable = 30.0
 
+[connection signal="shoot" from="." to="muzzle" method="shoot"]
 [connection signal="shoot" from="." to="muzzle/decrease_accuracy_while_shooting" method="_on_shoot"]
 [connection signal="trigger_pressed" from="." to="muzzle/decrease_accuracy_while_shooting" method="_on_trigger_pressed"]
 [connection signal="trigger_released" from="." to="muzzle/decrease_accuracy_while_shooting" method="_on_trigger_released"]
