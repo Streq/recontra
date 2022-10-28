@@ -527,7 +527,6 @@ shader_param/palette = SubResource( 278 )
 collision_layer = 9
 
 [node name="Sprite" parent="pivot" index="0"]
-visible = false
 material = SubResource( 276 )
 texture = ExtResource( 4 )
 frame = 5
