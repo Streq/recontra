@@ -32,11 +32,13 @@ onready var state_machine: Node = $state_machine
 onready var palette_client: Node = $pivot/Sprite/palette_client
 onready var gun_hold: Node2D = $pivot/gun_pivot/gun_hold
 onready var health: Node = $health
+onready var blindado: AudioStreamPlayer2D = $blindado
 
 export var facing_dir = 1.0 setget set_facing_dir
 
 var ready = false
 var dead = false
+var invulnerable = false
 
 func _ready() -> void:
 	ready = true
@@ -58,13 +60,17 @@ func set_facing_dir(val):
 		pivot.scale.x = sign(facing_dir)*abs(pivot.scale.x)
 
 func get_hit(by):
-	palette_animation.play("hurt")
 	by.affect(self)
-	emit_signal("got_hit",by)
-	emit_signal("took_hit")
+	if !invulnerable:
+		palette_animation.play("hurt")
+		emit_signal("got_hit",by)
+		emit_signal("took_hit")
+	else:
+		blindado.play()
 
 func take_damage(amount):
-	emit_signal("took_damage", amount)
+	if !invulnerable:
+		emit_signal("took_damage", amount)
 
 func die():
 	state_machine._change_state("dead_air")

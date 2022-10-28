@@ -1397,12 +1397,6 @@ valign = 1
 script = ExtResource( 21 )
 timer_path = NodePath("../../time_left")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/survive_label"]
-modulate = Color( 0, 0, 0, 1 )
-show_behind_parent = true
-margin_right = 40.0
-margin_bottom = 40.0
-
 [node name="dead_enemies" type="Label" parent="CanvasLayer2"]
 visible = false
 anchor_left = 0.5

@@ -19,8 +19,8 @@ func _physics_update(delta: float):
 		root.velocity.x = lerp(root.velocity.x, 0.0, root.air_lerp*delta)
 	else:
 		root.velocity.x = lerp(root.velocity.x, root.run_speed*sign(dirx), root.air_run_lerp*delta)
-	
-	if root.velocity.y<0.0 and !input.A.is_pressed():
-		root.velocity.y *= 0.5
+	if !input.A.is_pressed():
 		goto("air")
+		if root.velocity.y<0.0:
+			root.velocity.y *= 0.5
 		return

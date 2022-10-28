@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://assets/shader/palette.gdshader" type="Shader" id=1]
 [ext_resource path="res://src/fighter/hitbox/hitbox_frame.tscn" type="PackedScene" id=2]
@@ -23,11 +23,12 @@
 [ext_resource path="res://src/shooter/death_free_anim.gd" type="Script" id=21]
 [ext_resource path="res://src/shooter/jump.gd" type="Script" id=22]
 [ext_resource path="res://assets/audio/sfx/hit_the_ground.wav" type="AudioStream" id=23]
+[ext_resource path="res://assets/audio/sfx/blindado2.wav" type="AudioStream" id=24]
 
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 4, 7 )
 
-[sub_resource type="Image" id=270]
+[sub_resource type="Image" id=274]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -39,7 +40,7 @@ data = {
 [sub_resource type="ImageTexture" id=268]
 flags = 0
 flags = 0
-image = SubResource( 270 )
+image = SubResource( 274 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=269]
@@ -469,7 +470,52 @@ tracks/1/keys = {
 "values": [ false, false, false ]
 }
 
-[sub_resource type="Image" id=271]
+[sub_resource type="Animation" id=271]
+resource_name = "invulnerable"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("pivot/Sprite/palette_client_invulnerable:trigger")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=273]
+resource_name = "invulnerable_ending"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("pivot/Sprite/palette_client_invulnerable:trigger")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("pivot/Sprite/palette_client:trigger")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Image" id=275]
 data = {
 "data": PoolByteArray( 149, 255, 0, 255, 0, 87, 0, 255, 64, 44, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -481,7 +527,7 @@ data = {
 [sub_resource type="ImageTexture" id=249]
 flags = 0
 flags = 0
-image = SubResource( 271 )
+image = SubResource( 275 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=250]
@@ -544,7 +590,6 @@ shape = SubResource( 93 )
 [node name="pivot" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="pivot"]
-visible = false
 material = SubResource( 269 )
 texture = ExtResource( 12 )
 hframes = 3
@@ -557,6 +602,10 @@ __meta__ = {
 [node name="palette_client_hurt" parent="pivot/Sprite" instance=ExtResource( 4 )]
 type = 1
 index = 4
+
+[node name="palette_client_invulnerable" parent="pivot/Sprite" instance=ExtResource( 4 )]
+type = 1
+index = 5
 
 [node name="palette_client" parent="pivot/Sprite" instance=ExtResource( 4 )]
 type = 1
@@ -595,6 +644,8 @@ anims/run = SubResource( 101 )
 playback_process_mode = 0
 anims/RESET = SubResource( 102 )
 anims/hurt = SubResource( 103 )
+anims/invulnerable = SubResource( 271 )
+anims/invulnerable_ending = SubResource( 273 )
 
 [node name="input_state" type="Node" parent="."]
 process_priority = 2
@@ -660,6 +711,9 @@ stream = ExtResource( 10 )
 
 [node name="hit_the_ground_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 23 )
+
+[node name="blindado" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 24 )
 
 [connection signal="die" from="." to="pivot/gun_pivot" method="disable"]
 [connection signal="die" from="." to="hud_bar" method="hide"]

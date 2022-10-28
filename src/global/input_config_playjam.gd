@@ -1,6 +1,7 @@
 extends Node
 
 func _ready() -> void:
+	return
 	if true:
 #	if OS.has_feature("playjam"):
 		for action in InputMap.get_actions():
