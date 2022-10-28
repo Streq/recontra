@@ -1,53 +1,6 @@
-## Create project from skel
-```
-git clone https://github.com/Streq/GodotSkel.git miproject
-cd miproject
-rm -rf .git
-git init -b develop
-git add .
-git commit -m"first commit"
-gh repo create
+## Recontra
+Shooter arcade con partidas 90 segundos máximo, hecho para [playjam](https://github.com/PlayJamDevs/playjamgames)  
 
-? What would you like to do? Push an existing local repository to GitHub
-? Path to local repository .
-? Repository name miproject
-? Description description
-? Visibility Public
-✓ Created repository Streq/miproject on GitHub
-? Add a remote? Yes
-? What should the new remote be called? origin
-✓ Added remote git@github.com:Streq/miproject.git
-? Would you like to push commits from the current branch to "origin"? Yes
-✓ Pushed commits to git@github.com:Streq/miproject.git
-
-```
-
-## Update secrets
-```
-cp secrets_template.sh secrets.sh
-chmod +x secrets.sh
-#edit secrets.sh with keys and configs
-./secrets.sh
-```
-
-## Create main
-```
-git checkout -b main
-git push origin main
-git push --set-upstream origin main
-git checkout develop
-```
-
-## Release
-```
-chmod +x release.sh
-./release.sh "release message"
-```
-
-## Versioning by commit message
-```
-#in develop
-git commit -m"(MAJOR) algo" # 1.0.0 -> 2.0.0
-git commit -m"(MINOR) algo" # 1.0.0 -> 1.1.0
-git commit -m"algo"         # 1.0.0 -> 1.0.1
-```
+- Programación, sonidos y sprites por mi
+- Música: Contra (NES)
+- Fuente: Plotter de DamienG https://damieng.com/zx-origins
