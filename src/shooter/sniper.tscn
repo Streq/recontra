@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/shader/palette.gdshader" type="Shader" id=1]
 [ext_resource path="res://src/color/palette_client.tscn" type="PackedScene" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://src/shooter/muzzle.gd" type="Script" id=6]
 [ext_resource path="res://src/shooter/scope_point.gd" type="Script" id=7]
 [ext_resource path="res://assets/texture/white_square.png" type="Texture" id=8]
+[ext_resource path="res://assets/audio/sfx/sniper_sound3.wav" type="AudioStream" id=9]
 
-[sub_resource type="Image" id=4]
+[sub_resource type="Image" id=270]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -18,26 +19,26 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=2]
+[sub_resource type="ImageTexture" id=268]
 flags = 0
 flags = 0
-image = SubResource( 4 )
+image = SubResource( 270 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=269]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 2 )
+shader_param/palette = SubResource( 268 )
 
 [node name="sniper" type="Node2D"]
 script = ExtResource( 5 )
 cooldown = 0.5
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 3 )
+material = SubResource( 269 )
 position = Vector2( 3, 0 )
 texture = ExtResource( 4 )
 
@@ -59,6 +60,9 @@ override_scale = Vector2( 4, 1 )
 override_targets_hit_before_despawn = 5
 override_knockback = 0.2
 BULLET = ExtResource( 3 )
+
+[node name="gunshot_sound" type="AudioStreamPlayer2D" parent="muzzle"]
+stream = ExtResource( 9 )
 
 [node name="cooldown" type="Timer" parent="."]
 process_mode = 0
@@ -656,4 +660,5 @@ region_rect = Rect2( 0, 0, 1, 1 )
 script = ExtResource( 7 )
 
 [connection signal="shoot" from="." to="muzzle" method="shoot"]
+[connection signal="fired_bullet" from="muzzle" to="muzzle/gunshot_sound" method="play"]
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

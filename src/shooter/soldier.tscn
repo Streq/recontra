@@ -1,5 +1,6 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=44 format=2]
 
+[ext_resource path="res://assets/shader/palette.gdshader" type="Shader" id=1]
 [ext_resource path="res://src/fighter/hitbox/hitbox_frame.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/test/gameplay_test/input_state.gd" type="Script" id=3]
 [ext_resource path="res://src/color/palette_client.tscn" type="PackedScene" id=4]
@@ -8,6 +9,7 @@
 [ext_resource path="res://src/util/state_machine/state_machine.gd" type="Script" id=7]
 [ext_resource path="res://src/shooter/run.gd" type="Script" id=8]
 [ext_resource path="res://src/shooter/idle.gd" type="Script" id=9]
+[ext_resource path="res://assets/audio/sfx/enemy_hit3.wav" type="AudioStream" id=10]
 [ext_resource path="res://src/shooter/soldier.gd" type="Script" id=11]
 [ext_resource path="res://assets/texture/fighter/mook.png" type="Texture" id=12]
 [ext_resource path="res://src/shooter/gun_pivot.gd" type="Script" id=13]
@@ -20,9 +22,33 @@
 [ext_resource path="res://src/shooter/dead_air.gd" type="Script" id=20]
 [ext_resource path="res://src/shooter/death_free_anim.gd" type="Script" id=21]
 [ext_resource path="res://src/shooter/jump.gd" type="Script" id=22]
+[ext_resource path="res://assets/audio/sfx/hit_the_ground.wav" type="AudioStream" id=23]
 
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 4, 7 )
+
+[sub_resource type="Image" id=270]
+data = {
+"data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
+"format": "RGBA8",
+"height": 1,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture" id=268]
+flags = 0
+flags = 0
+image = SubResource( 270 )
+size = Vector2( 4, 1 )
+
+[sub_resource type="ShaderMaterial" id=269]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/palette_size = 4
+shader_param/offset = 0
+shader_param/blue_index_offset = 0.0
+shader_param/palette = SubResource( 268 )
 
 [sub_resource type="RectangleShape2D" id=95]
 extents = Vector2( 5.5, 5.5 )
@@ -443,6 +469,29 @@ tracks/1/keys = {
 "values": [ false, false, false ]
 }
 
+[sub_resource type="Image" id=271]
+data = {
+"data": PoolByteArray( 149, 255, 0, 255, 0, 87, 0, 255, 64, 44, 0, 255, 0, 0, 0, 255 ),
+"format": "RGBA8",
+"height": 1,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture" id=249]
+flags = 0
+flags = 0
+image = SubResource( 271 )
+size = Vector2( 4, 1 )
+
+[sub_resource type="ShaderMaterial" id=250]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/palette_size = 4
+shader_param/offset = 0.0
+shader_param/blue_index_offset = 0.0
+shader_param/palette = SubResource( 249 )
+
 [sub_resource type="AtlasTexture" id=110]
 flags = 2
 atlas = ExtResource( 16 )
@@ -496,6 +545,7 @@ shape = SubResource( 93 )
 
 [node name="Sprite" type="Sprite" parent="pivot"]
 visible = false
+material = SubResource( 269 )
 texture = ExtResource( 12 )
 hframes = 3
 vframes = 2
@@ -585,6 +635,7 @@ value = 16.0
 
 [node name="hud_bar" type="TextureProgress" parent="."]
 visible = false
+material = SubResource( 250 )
 margin_left = -8.0
 margin_top = -11.0
 margin_right = 8.0
@@ -604,9 +655,17 @@ script = ExtResource( 21 )
 anims/RESET = SubResource( 121 )
 anims/play = SubResource( 118 )
 
+[node name="got_hit_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+
+[node name="hit_the_ground_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 23 )
+
 [connection signal="die" from="." to="pivot/gun_pivot" method="disable"]
 [connection signal="die" from="." to="hud_bar" method="hide"]
 [connection signal="took_damage" from="." to="health" method="subtract"]
+[connection signal="took_hit" from="." to="got_hit_sound" method="play"]
 [connection signal="entered" from="state_machine/dead" to="death_free_anim" method="play"]
+[connection signal="entered" from="state_machine/dead" to="hit_the_ground_sound" method="play"]
 [connection signal="empty" from="health" to="." method="die"]
 [connection signal="value_changed" from="health" to="hud_bar" method="_value_changed"]

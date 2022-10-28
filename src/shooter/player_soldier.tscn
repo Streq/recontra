@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/shooter/soldier.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/audio/sfx/hit_hurt8.wav" type="AudioStream" id=2]
 [ext_resource path="res://assets/texture/fighter/soldier.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=33]
@@ -384,3 +385,6 @@ anims/run = SubResource( 6 )
 max_value = 16.0
 value = 16.0
 rounded = true
+
+[node name="got_hit_sound" parent="." index="9"]
+stream = ExtResource( 2 )

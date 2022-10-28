@@ -25,8 +25,10 @@ func lose():
 		restart()
 
 func quit():
-	get_tree().quit(QUIT)
-	
+	if OS.has_feature("playjam"):
+		get_tree().quit(QUIT)
+	else:
+		OS.window_fullscreen = false
 func restart():
 	restart_rect.visible = true
 	yield(get_tree().create_timer(1.0),"timeout")

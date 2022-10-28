@@ -6,8 +6,10 @@ onready var drop_table: Node = $drop_table
 func _ready() -> void:
 	var drop = drop_table.get_spawn()
 	if drop:
-		get_parent().call_deferred("add_child",drop.instance())
-
+		var instance = drop.instance()
+		get_parent().call_deferred("add_child",instance)
+		instance.get_node("pickup_sound").volume_db=-100
+		
 
 func _unhandled_key_input(event: InputEventKey) -> void:
 	if OS.is_debug_build():

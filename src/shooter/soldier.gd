@@ -1,5 +1,6 @@
 extends KinematicBody2D
 signal got_hit(by)
+signal took_hit()
 signal took_damage(amount)
 signal die()
 signal weapon_change(name)
@@ -60,6 +61,7 @@ func get_hit(by):
 	palette_animation.play("hurt")
 	by.affect(self)
 	emit_signal("got_hit",by)
+	emit_signal("took_hit")
 
 func take_damage(amount):
 	emit_signal("took_damage", amount)
