@@ -24,5 +24,5 @@ func _ready() -> void:
 	)
 
 func is_playjam():
-	return true
+#	return true
 	return OS.has_feature("playjam")
