@@ -3,5 +3,5 @@ extends Node
 export var amount := 4.0
 
 func apply(on):
-	on.take_damage(-amount)
+	on.heal(amount)
 	pass

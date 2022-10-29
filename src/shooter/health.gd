@@ -34,5 +34,9 @@ func add_value(val):
 func subtract(amount):
 	set_value(value-amount)
 
+func add(amount):
+	set_value(value+amount)
+
+
 #func _physics_process(delta):
 #	pass

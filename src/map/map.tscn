@@ -47,7 +47,7 @@
 [ext_resource path="res://src/map/maps/map_no_bridge.tscn" type="PackedScene" id=45]
 [ext_resource path="res://src/map/add_controls_text.gd" type="Script" id=46]
 
-[sub_resource type="Image" id=297]
+[sub_resource type="Image" id=261]
 data = {
 "data": PoolByteArray( 252, 252, 252, 255, 60, 188, 252, 255, 0, 112, 236, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -56,19 +56,19 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=285]
+[sub_resource type="ImageTexture" id=249]
 flags = 0
 flags = 0
-image = SubResource( 297 )
+image = SubResource( 261 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=286]
+[sub_resource type="ShaderMaterial" id=250]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 285 )
+shader_param/palette = SubResource( 249 )
 
 [sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 8, 336 )
@@ -80,7 +80,7 @@ extents = Vector2( 7.99944, 368 )
 size = 8
 font_data = ExtResource( 19 )
 
-[sub_resource type="Image" id=298]
+[sub_resource type="Image" id=262]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 78, 74, 255, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -89,21 +89,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=291]
+[sub_resource type="ImageTexture" id=252]
 flags = 0
 flags = 0
-image = SubResource( 298 )
+image = SubResource( 262 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=292]
+[sub_resource type="ShaderMaterial" id=253]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 291 )
+shader_param/palette = SubResource( 252 )
 
-[sub_resource type="Image" id=299]
+[sub_resource type="Image" id=263]
 data = {
 "data": PoolByteArray( 246, 231, 213, 255, 156, 156, 156, 255, 107, 107, 107, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -115,7 +115,7 @@ data = {
 [sub_resource type="ImageTexture" id=221]
 flags = 0
 flags = 0
-image = SubResource( 299 )
+image = SubResource( 263 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=96]
@@ -126,7 +126,7 @@ shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
 shader_param/palette = SubResource( 221 )
 
-[sub_resource type="Image" id=300]
+[sub_resource type="Image" id=264]
 data = {
 "data": PoolByteArray( 246, 231, 213, 255, 156, 156, 156, 255, 107, 107, 107, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -135,21 +135,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=295]
+[sub_resource type="ImageTexture" id=256]
 flags = 0
 flags = 0
-image = SubResource( 300 )
+image = SubResource( 264 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=296]
+[sub_resource type="ShaderMaterial" id=257]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 295 )
+shader_param/palette = SubResource( 256 )
 
-[sub_resource type="Image" id=301]
+[sub_resource type="Image" id=265]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -158,21 +158,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=275]
+[sub_resource type="ImageTexture" id=259]
 flags = 0
 flags = 0
-image = SubResource( 301 )
+image = SubResource( 265 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=276]
+[sub_resource type="ShaderMaterial" id=260]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 275 )
+shader_param/palette = SubResource( 259 )
 
-[sub_resource type="Image" id=302]
+[sub_resource type="Image" id=266]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 117, 255, 0, 255, 8, 121, 38, 255, 0, 83, 48, 255 ),
 "format": "RGBA8",
@@ -184,7 +184,7 @@ data = {
 [sub_resource type="ImageTexture" id=242]
 flags = 0
 flags = 0
-image = SubResource( 302 )
+image = SubResource( 266 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=243]
@@ -631,7 +631,7 @@ layer = -1
 [node name="Sprite" type="TextureRect" parent="CanvasLayer"]
 visible = false
 modulate = Color( 0, 0, 0, 1 )
-material = SubResource( 286 )
+material = SubResource( 250 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 6 )
@@ -839,7 +839,7 @@ custom_constants/margin_bottom = -8
 
 [node name="fade_rect" type="TextureRect" parent="CanvasLayer2/intro/intro_label/MarginContainer"]
 show_behind_parent = true
-material = SubResource( 292 )
+material = SubResource( 253 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 264.0
@@ -890,7 +890,7 @@ custom_constants/margin_bottom = -8
 
 [node name="fade_rect" type="TextureRect" parent="CanvasLayer2/intro/consigna_label/MarginContainer"]
 show_behind_parent = true
-material = SubResource( 292 )
+material = SubResource( 253 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 264.0
@@ -946,7 +946,7 @@ custom_constants/margin_bottom = -8
 
 [node name="fade_rect" type="TextureRect" parent="CanvasLayer2/win_label/MarginContainer"]
 show_behind_parent = true
-material = SubResource( 292 )
+material = SubResource( 253 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 248.0
@@ -997,7 +997,7 @@ custom_constants/margin_bottom = -8
 
 [node name="fade_rect" type="TextureRect" parent="CanvasLayer2/lose_label/MarginContainer"]
 show_behind_parent = true
-material = SubResource( 292 )
+material = SubResource( 253 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 248.0
@@ -1081,7 +1081,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2/HBoxContainer"]
-material = SubResource( 296 )
+material = SubResource( 257 )
 margin_left = 36.0
 margin_right = 52.0
 margin_bottom = 16.0
@@ -1090,7 +1090,7 @@ texture = ExtResource( 26 )
 [node name="palette_client" parent="CanvasLayer2/HBoxContainer/TextureRect" instance=ExtResource( 5 )]
 
 [node name="weapon_texture" type="TextureRect" parent="CanvasLayer2/HBoxContainer/TextureRect"]
-material = SubResource( 276 )
+material = SubResource( 260 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 27 )

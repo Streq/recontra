@@ -2,6 +2,7 @@ extends KinematicBody2D
 signal got_hit(by)
 signal took_hit()
 signal took_damage(amount)
+signal healed(amount)
 signal die()
 signal weapon_change(name)
 
@@ -71,6 +72,9 @@ func get_hit(by):
 func take_damage(amount):
 	if !invulnerable:
 		emit_signal("took_damage", amount)
+
+func heal(amount):
+	emit_signal("healed", amount)
 
 func die():
 	state_machine._change_state("dead_air")

@@ -31,7 +31,7 @@ shader_param/palette = SubResource( 142 )
 
 [sub_resource type="Image" id=174]
 data = {
-"data": PoolByteArray( 246, 231, 213, 255, 255, 156, 198, 255, 247, 82, 49, 255, 57, 57, 57, 255 ),
+"data": PoolByteArray( 252, 252, 252, 255, 188, 188, 188, 255, 255, 0, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
 "height": 1,
 "mipmaps": false,
@@ -408,9 +408,9 @@ material = SubResource( 24 )
 string_val = "[\"fff6e7d5\",\"ff9c9c9c\",\"ff6b6b6b\",\"ff393939\"]"
 
 [node name="pink" parent="Background" instance=ExtResource( 2 )]
-palette = PoolColorArray( 0.964706, 0.905882, 0.835294, 1, 1, 0.611765, 0.776471, 1, 0.968627, 0.321569, 0.192157, 1, 0.223529, 0.223529, 0.223529, 1 )
+palette = PoolColorArray( 0.988235, 0.988235, 0.988235, 1, 0.737255, 0.737255, 0.737255, 1, 1, 0, 0, 1, 0, 0, 0, 1 )
 material = SubResource( 27 )
-string_val = "[\"fff6e7d5\",\"ffff9cc6\",\"fff75231\",\"ff393939\"]"
+string_val = "[\"fffcfcfc\",\"ffbcbcbc\",\"ffff0000\",\"ff000000\"]"
 
 [node name="grass" parent="Background" instance=ExtResource( 2 )]
 palette = PoolColorArray( 0.584314, 1, 0, 1, 0, 0.341176, 0, 1, 0.25098, 0.172549, 0, 1, 0, 0, 0, 1 )
@@ -497,7 +497,7 @@ visible = false
 
 [node name="Node2D" type="Node2D" parent="CanvasLayer"]
 visible = false
-position = Vector2( 229, 153 )
+position = Vector2( 38, 46 )
 
 [node name="grass" type="TileMap" parent="CanvasLayer/Node2D"]
 material = SubResource( 30 )

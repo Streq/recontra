@@ -1,11 +1,11 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/shader/palette.gdshader" type="Shader" id=1]
 [ext_resource path="res://assets/texture/recontra_tiles.png" type="Texture" id=2]
 [ext_resource path="res://assets/texture/some_autotiles.png" type="Texture" id=4]
 [ext_resource path="res://src/color/palette_client.tscn" type="PackedScene" id=5]
 
-[sub_resource type="Image" id=290]
+[sub_resource type="Image" id=297]
 data = {
 "data": PoolByteArray( 149, 255, 0, 255, 0, 87, 0, 255, 64, 44, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -17,7 +17,7 @@ data = {
 [sub_resource type="ImageTexture" id=278]
 flags = 0
 flags = 0
-image = SubResource( 290 )
+image = SubResource( 297 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=279]
@@ -362,7 +362,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="Image" id=291]
+[sub_resource type="Image" id=298]
 data = {
 "data": PoolByteArray( 240, 188, 60, 255, 71, 58, 0, 255, 41, 28, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -374,7 +374,7 @@ data = {
 [sub_resource type="ImageTexture" id=282]
 flags = 0
 flags = 0
-image = SubResource( 291 )
+image = SubResource( 298 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=283]
@@ -385,7 +385,7 @@ shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
 shader_param/palette = SubResource( 282 )
 
-[sub_resource type="Image" id=292]
+[sub_resource type="Image" id=299]
 data = {
 "data": PoolByteArray( 252, 252, 252, 255, 60, 188, 252, 255, 0, 112, 236, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -397,7 +397,7 @@ data = {
 [sub_resource type="ImageTexture" id=285]
 flags = 0
 flags = 0
-image = SubResource( 292 )
+image = SubResource( 299 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=286]
@@ -408,7 +408,7 @@ shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
 shader_param/palette = SubResource( 285 )
 
-[sub_resource type="Image" id=293]
+[sub_resource type="Image" id=300]
 data = {
 "data": PoolByteArray( 252, 252, 252, 255, 188, 188, 188, 255, 60, 188, 252, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -420,7 +420,7 @@ data = {
 [sub_resource type="ImageTexture" id=288]
 flags = 0
 flags = 0
-image = SubResource( 293 )
+image = SubResource( 300 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=289]
@@ -430,6 +430,29 @@ shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
 shader_param/palette = SubResource( 288 )
+
+[sub_resource type="Image" id=301]
+data = {
+"data": PoolByteArray( 246, 231, 213, 255, 255, 156, 198, 255, 247, 82, 49, 255, 57, 57, 57, 255 ),
+"format": "RGBA8",
+"height": 1,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture" id=295]
+flags = 0
+flags = 0
+image = SubResource( 301 )
+size = Vector2( 4, 1 )
+
+[sub_resource type="ShaderMaterial" id=296]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/palette_size = 4
+shader_param/offset = 0
+shader_param/blue_index_offset = 0.0
+shader_param/palette = SubResource( 295 )
 
 [node name="map" type="Node2D"]
 
@@ -487,11 +510,11 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 3, 2, 0, 0, 3, 0, 3, 4, 0, 1, 5, 0, 2, 
 index = 6
 
 [node name="bridge" type="TileMap" parent="."]
-material = SubResource( 289 )
+material = SubResource( 296 )
 tile_set = SubResource( 101 )
 cell_size = Vector2( 32, 16 )
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 3, 2, 0, 0, 3, 0, 3, 4, 0, 1, 5, 0, 2, 6, 0, 0, 7, 0, 3, 8, 0, 0, 9, 0, 3, 10, 0, 0, 11, 0, 3, 12, 0, 0, 13, 0, 3, 14, 0, 0, 15, 0, 3, 16, 0, 1, 17, 0, 4, 18, 0, 5, 19, 0, 2, 65536, 0, 3, 65537, 0, 0, 65538, 0, 3, 65539, 0, 0, 65540, 0, 65537, 65541, 0, 65538, 65542, 0, 3, 65543, 0, 0, 65544, 0, 3, 65545, 0, 0, 65546, 0, 3, 65547, 0, 0, 65548, 0, 3, 65549, 0, 0, 65550, 0, 3, 65551, 0, 0, 65552, 0, 65537, 65553, 0, 65540, 65554, 0, 65541, 65555, 0, 65538, 131072, 0, 65536, 131073, 0, 65536, 131074, 0, 65536, 131075, 0, 65536, 131076, 0, 131073, 131077, 0, 131074, 131078, 0, 65536, 131079, 0, 65536, 131080, 0, 65536, 131081, 0, 65536, 131082, 0, 65536, 131083, 0, 65536, 131084, 0, 65536, 131085, 0, 65536, 131086, 0, 65536, 131087, 0, 65536, 131088, 0, 131073, 131089, 0, 131076, 131090, 0, 131077, 131091, 0, 131074, 196615, 0, 65536, 196616, 0, 65536, 196617, 0, 65536, 196618, 0, 65536, 196619, 0, 65536, 196620, 0, 65536, 196621, 0, 65536, 196622, 0, 65536, 262151, 0, 65536, 262152, 0, 65536, 262153, 0, 65536, 262154, 0, 65536, 262155, 0, 65536, 262156, 0, 65536, 262157, 0, 65536, 262158, 0, 65536, 589832, 0, 327681, 589833, 0, 327681, 589834, 0, 327681, 589835, 0, 327681, 589836, 0, 327681, 655368, 0, 393217, 655369, 0, 393218, 655370, 0, 393218, 655371, 0, 393218, 655372, 0, 393219 )
+tile_data = PoolIntArray( 589832, 0, 327681, 589833, 0, 327681, 589834, 0, 327681, 589835, 0, 327681, 589836, 0, 327681, 655368, 0, 393217, 655369, 0, 393218, 655370, 0, 393218, 655371, 0, 393218, 655372, 0, 393219 )
 
 [node name="palette_client" parent="bridge" instance=ExtResource( 5 )]
-index = 6
+index = 1

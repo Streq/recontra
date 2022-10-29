@@ -13,8 +13,10 @@ func _physics_process(delta: float) -> void:
 	input.B.pressed = false
 	input.dir = dir
 	if jump_gaps and owner.is_on_floor():
-		input.A.pressed = !floor_ahead_detect.get_overlapping_bodies()
-		return
+		var should_jump = !floor_ahead_detect.get_overlapping_bodies()
+		input.A.pressed = should_jump
+		if should_jump:
+			return
 	var target = Group.get_one("player")
 	if target and (!target_detect or target_detect.overlaps_body(target)):
 		var dir_to_target = owner.global_position.direction_to(target.global_position)
