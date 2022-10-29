@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/texture/white_square.png" type="Texture" id=8]
 [ext_resource path="res://assets/audio/sfx/sniper_sound8.wav" type="AudioStream" id=9]
 
-[sub_resource type="Image" id=277]
+[sub_resource type="Image" id=4]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -19,26 +19,26 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=275]
+[sub_resource type="ImageTexture" id=2]
 flags = 0
 flags = 0
-image = SubResource( 277 )
+image = SubResource( 4 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=276]
+[sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 275 )
+shader_param/palette = SubResource( 2 )
 
 [node name="sniper" type="Node2D"]
 script = ExtResource( 5 )
 cooldown = 0.5
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 276 )
+material = SubResource( 3 )
 position = Vector2( 3, 0 )
 texture = ExtResource( 4 )
 

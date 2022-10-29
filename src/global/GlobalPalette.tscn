@@ -261,7 +261,7 @@ shader_param/palette = SubResource( 162 )
 
 [sub_resource type="Image" id=184]
 data = {
-"data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 123, 82, 24, 255, 0, 0, 0, 255 ),
+"data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 149, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
 "height": 1,
 "mipmaps": false,
@@ -463,9 +463,9 @@ string_val = "[\"ffdeffde\",\"ffffe363\",\"ff39bd18\",\"ff000000\"]"
 is_object = true
 
 [node name="brown_dude" parent="Object" instance=ExtResource( 2 )]
-palette = PoolColorArray( 0.870588, 1, 0.870588, 1, 1, 0.890196, 0.388235, 1, 0.482353, 0.321569, 0.0941176, 1, 0, 0, 0, 1 )
+palette = PoolColorArray( 0.870588, 1, 0.870588, 1, 1, 0.890196, 0.388235, 1, 1, 0.584314, 0, 1, 0, 0, 0, 1 )
 material = SubResource( 12 )
-string_val = "[\"ffdeffde\",\"ffffe363\",\"ff7b5218\",\"ff000000\"]"
+string_val = "[\"ffdeffde\",\"ffffe363\",\"ffff9500\",\"ff000000\"]"
 is_object = true
 
 [node name="hurt" parent="Object" instance=ExtResource( 2 )]
