@@ -480,7 +480,7 @@ material = SubResource( 88 )
 string_val = "[\"ff000000\",\"fffcfcfc\",\"ff3cbcfc\",\"ff0070ec\"]"
 is_object = true
 
-[node name="grass" parent="Object" instance=ExtResource( 2 )]
+[node name="health" parent="Object" instance=ExtResource( 2 )]
 palette = PoolColorArray( 1, 1, 1, 1, 0.992157, 1, 0, 1, 0.129412, 1, 0, 1, 0, 0.356863, 0.407843, 1 )
 material = SubResource( 18 )
 string_val = "[\"ffffffff\",\"fffdff00\",\"ff21ff00\",\"ff005b68\"]"

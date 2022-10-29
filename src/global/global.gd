@@ -22,3 +22,7 @@ func _ready() -> void:
 		ProjectSettings.get("display/window/size/width"),
 		ProjectSettings.get("display/window/size/height")
 	)
+
+func is_playjam():
+	return true
+	return OS.has_feature("playjam")

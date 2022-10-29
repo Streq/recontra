@@ -3,7 +3,7 @@ extends Node
 func _ready() -> void:
 #	return
 #	if true:
-	if OS.has_feature("playjam"):
+	if Global.is_playjam():
 		for action in InputMap.get_actions():
 			InputMap.action_erase_events(action)
 		configure_A()

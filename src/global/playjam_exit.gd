@@ -13,19 +13,19 @@ func _unhandled_key_input(event: InputEventKey) -> void:
 		quit()
 
 func win():
-	if OS.has_feature("playjam"):
+	if Global.is_playjam():
 		get_tree().quit(WIN)
 	else:
 		restart()
 
 func lose():
-	if OS.has_feature("playjam"):
+	if Global.is_playjam():
 		get_tree().quit(LOSE)
 	else:
 		restart()
 
 func quit():
-	if OS.has_feature("playjam"):
+	if Global.is_playjam():
 		get_tree().quit(QUIT)
 	else:
 		OS.window_fullscreen = false
