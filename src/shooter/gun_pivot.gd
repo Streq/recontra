@@ -9,7 +9,7 @@ func set_disabled(val):
 	disabled = val
 	set_physics_process(!disabled)
 	visible = !disabled
-
+	
 func disable():
 	set_disabled(true)
 	gun_hold.release_trigger()

@@ -7,6 +7,7 @@ onready var time_left: Timer = $time_left
 onready var spawner_timer: Timer = $spawner/Timer
 onready var lose_anim: AnimationPlayer = $lose_anim
 onready var consigna_label: Label = $CanvasLayer2/intro/consigna_label
+onready var soldier: KinematicBody2D = $soldier
 
 var outcome_decided = false
 var dead_enemies = 0
@@ -50,7 +51,7 @@ func _input(event: InputEvent) -> void:
 	if OS.is_debug_build():
 		if event is InputEventKey:
 			if event.scancode == KEY_K:
-				lose()
+				soldier.die()
 			if event.scancode == KEY_W:
 				win()
 

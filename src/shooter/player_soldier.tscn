@@ -1,32 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/shooter/soldier.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/audio/sfx/hit_hurt8.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/shader/palette.gdshader" type="Shader" id=3]
 [ext_resource path="res://assets/texture/fighter/soldier.png" type="Texture" id=4]
-
-[sub_resource type="Image" id=265]
-data = {
-"data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
-"format": "RGBA8",
-"height": 1,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="ImageTexture" id=259]
-flags = 0
-flags = 0
-image = SubResource( 265 )
-size = Vector2( 4, 1 )
-
-[sub_resource type="ShaderMaterial" id=260]
-resource_local_to_scene = true
-shader = ExtResource( 3 )
-shader_param/palette_size = 4
-shader_param/offset = 0
-shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 259 )
 
 [sub_resource type="Animation" id=33]
 resource_local_to_scene = true
@@ -67,7 +43,7 @@ tracks/2/keys = {
 "values": [ 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("pivot/gun_pivot:visible")
+tracks/3/path = NodePath("pivot/gun_pivot/gun_hold:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -423,7 +399,7 @@ tracks/5/keys = {
 "values": [ 0.0, 90.0, 180.0, 270.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("pivot/gun_pivot:visible")
+tracks/6/path = NodePath("pivot/gun_pivot/gun_hold:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -500,34 +476,10 @@ tracks/4/keys = {
 "values": [ 1.0, 2.0 ]
 }
 
-[sub_resource type="Image" id=266]
-data = {
-"data": PoolByteArray( 149, 255, 0, 255, 0, 87, 0, 255, 64, 44, 0, 255, 0, 0, 0, 255 ),
-"format": "RGBA8",
-"height": 1,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="ImageTexture" id=263]
-flags = 0
-flags = 0
-image = SubResource( 266 )
-size = Vector2( 4, 1 )
-
-[sub_resource type="ShaderMaterial" id=264]
-resource_local_to_scene = true
-shader = ExtResource( 3 )
-shader_param/palette_size = 4
-shader_param/offset = 0.0
-shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 263 )
-
 [node name="soldier" groups=["player"] instance=ExtResource( 1 )]
 collision_layer = 9
 
 [node name="Sprite" parent="pivot" index="0"]
-material = SubResource( 260 )
 texture = ExtResource( 4 )
 frame = 5
 __meta__ = {
@@ -547,7 +499,6 @@ anims/run = SubResource( 6 )
 animation = "jump"
 
 [node name="hud_bar" parent="." index="7"]
-material = SubResource( 264 )
 max_value = 16.0
 value = 16.0
 rounded = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://src/controller/input_controller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/map/maps/map_bridge.tscn" type="PackedScene" id=2]
@@ -47,7 +47,7 @@
 [ext_resource path="res://src/map/maps/map_no_bridge.tscn" type="PackedScene" id=45]
 [ext_resource path="res://src/map/add_controls_text.gd" type="Script" id=46]
 
-[sub_resource type="Image" id=261]
+[sub_resource type="Image" id=299]
 data = {
 "data": PoolByteArray( 252, 252, 252, 255, 60, 188, 252, 255, 0, 112, 236, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -56,19 +56,19 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=249]
+[sub_resource type="ImageTexture" id=285]
 flags = 0
 flags = 0
-image = SubResource( 261 )
+image = SubResource( 299 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=250]
+[sub_resource type="ShaderMaterial" id=286]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 249 )
+shader_param/palette = SubResource( 285 )
 
 [sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 8, 336 )
@@ -80,7 +80,7 @@ extents = Vector2( 7.99944, 368 )
 size = 8
 font_data = ExtResource( 19 )
 
-[sub_resource type="Image" id=262]
+[sub_resource type="Image" id=300]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 78, 74, 255, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -89,21 +89,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=252]
+[sub_resource type="ImageTexture" id=289]
 flags = 0
 flags = 0
-image = SubResource( 262 )
+image = SubResource( 300 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=253]
+[sub_resource type="ShaderMaterial" id=290]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 252 )
+shader_param/palette = SubResource( 289 )
 
-[sub_resource type="Image" id=263]
+[sub_resource type="Image" id=301]
 data = {
 "data": PoolByteArray( 246, 231, 213, 255, 156, 156, 156, 255, 107, 107, 107, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -115,7 +115,7 @@ data = {
 [sub_resource type="ImageTexture" id=221]
 flags = 0
 flags = 0
-image = SubResource( 263 )
+image = SubResource( 301 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=96]
@@ -126,7 +126,7 @@ shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
 shader_param/palette = SubResource( 221 )
 
-[sub_resource type="Image" id=264]
+[sub_resource type="Image" id=302]
 data = {
 "data": PoolByteArray( 246, 231, 213, 255, 156, 156, 156, 255, 107, 107, 107, 255, 57, 57, 57, 255 ),
 "format": "RGBA8",
@@ -135,21 +135,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=256]
+[sub_resource type="ImageTexture" id=293]
 flags = 0
 flags = 0
-image = SubResource( 264 )
+image = SubResource( 302 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=257]
+[sub_resource type="ShaderMaterial" id=294]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 256 )
+shader_param/palette = SubResource( 293 )
 
-[sub_resource type="Image" id=265]
+[sub_resource type="Image" id=303]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 255, 227, 99, 255, 255, 57, 8, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -158,21 +158,21 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=259]
+[sub_resource type="ImageTexture" id=275]
 flags = 0
 flags = 0
-image = SubResource( 265 )
+image = SubResource( 303 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=260]
+[sub_resource type="ShaderMaterial" id=276]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 259 )
+shader_param/palette = SubResource( 275 )
 
-[sub_resource type="Image" id=266]
+[sub_resource type="Image" id=304]
 data = {
 "data": PoolByteArray( 255, 255, 255, 0, 117, 255, 0, 255, 8, 121, 38, 255, 0, 83, 48, 255 ),
 "format": "RGBA8",
@@ -184,7 +184,7 @@ data = {
 [sub_resource type="ImageTexture" id=242]
 flags = 0
 flags = 0
-image = SubResource( 266 )
+image = SubResource( 304 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=243]
@@ -269,10 +269,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 15, 25, 35, 45, 55, 65, 75, 85 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 10, 20, 30, 40, 50, 60, 70, 80 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0.0, 1.0, 2.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0 ]
+"values": [ 1.0, 2.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("spawn_source/aim_mook:weight")
@@ -281,10 +281,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 15, 25, 35, 45, 55, 65, 75, 85 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 10, 20, 30, 40, 50, 60, 70, 80 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0.0, 0.0, 1.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0 ]
+"values": [ 0.0, 1.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("spawn_source/mook:weight")
@@ -293,10 +293,63 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 5, 15, 25, 35, 45, 55, 65, 75, 85 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 10, 20, 30, 40, 50, 60, 70, 80 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0 ]
+"values": [ 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("time_left")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ -1 ],
+"method": "start"
+} ]
+}
+
+[sub_resource type="Animation" id=297]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("spawn_source/aim_mook:weight")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("spawn_source/jump_mook:weight")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("spawn_source/mook:weight")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CanvasLayer2/intro/consigna_label:visible")
@@ -307,8 +360,8 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ false ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CanvasLayer2/intro/consigna_label:visible_characters")
@@ -317,24 +370,39 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=298]
+resource_name = "play"
+length = 90.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer2/intro/consigna_label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer2/intro/consigna_label:visible_characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 1, 11 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 200 ]
-}
-tracks/5/type = "method"
-tracks/5/path = NodePath("time_left")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 5 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ -1 ],
-"method": "start"
-} ]
 }
 
 [sub_resource type="Animation" id=76]
@@ -631,7 +699,7 @@ layer = -1
 [node name="Sprite" type="TextureRect" parent="CanvasLayer"]
 visible = false
 modulate = Color( 0, 0, 0, 1 )
-material = SubResource( 250 )
+material = SubResource( 286 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 6 )
@@ -839,7 +907,7 @@ custom_constants/margin_bottom = -8
 
 [node name="fade_rect" type="TextureRect" parent="CanvasLayer2/intro/intro_label/MarginContainer"]
 show_behind_parent = true
-material = SubResource( 253 )
+material = SubResource( 290 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 264.0
@@ -890,7 +958,7 @@ custom_constants/margin_bottom = -8
 
 [node name="fade_rect" type="TextureRect" parent="CanvasLayer2/intro/consigna_label/MarginContainer"]
 show_behind_parent = true
-material = SubResource( 253 )
+material = SubResource( 290 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 264.0
@@ -946,7 +1014,7 @@ custom_constants/margin_bottom = -8
 
 [node name="fade_rect" type="TextureRect" parent="CanvasLayer2/win_label/MarginContainer"]
 show_behind_parent = true
-material = SubResource( 253 )
+material = SubResource( 290 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 248.0
@@ -997,7 +1065,7 @@ custom_constants/margin_bottom = -8
 
 [node name="fade_rect" type="TextureRect" parent="CanvasLayer2/lose_label/MarginContainer"]
 show_behind_parent = true
-material = SubResource( 253 )
+material = SubResource( 290 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 248.0
@@ -1081,7 +1149,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2/HBoxContainer"]
-material = SubResource( 257 )
+material = SubResource( 294 )
 margin_left = 36.0
 margin_right = 52.0
 margin_bottom = 16.0
@@ -1090,7 +1158,7 @@ texture = ExtResource( 26 )
 [node name="palette_client" parent="CanvasLayer2/HBoxContainer/TextureRect" instance=ExtResource( 5 )]
 
 [node name="weapon_texture" type="TextureRect" parent="CanvasLayer2/HBoxContainer/TextureRect"]
-material = SubResource( 260 )
+material = SubResource( 276 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 27 )
@@ -1121,6 +1189,11 @@ one_shot = true
 playback_process_mode = 0
 anims/RESET = SubResource( 63 )
 anims/play = SubResource( 64 )
+
+[node name="consigna_anim" type="AnimationPlayer" parent="."]
+playback_process_mode = 0
+anims/RESET = SubResource( 297 )
+anims/play = SubResource( 298 )
 
 [node name="win_anim" type="AnimationPlayer" parent="."]
 playback_process_mode = 0
@@ -1211,9 +1284,10 @@ one_shot = true
 [connection signal="die" from="soldier" to="." method="_on_soldier_die"]
 [connection signal="weapon_change" from="soldier" to="CanvasLayer2/HBoxContainer/TextureRect/weapon_texture" method="_on_weapon_change"]
 [connection signal="body_entered" from="despawn_zone" to="despawn_zone" method="_on_despawn_zone_body_entered"]
-[connection signal="fully_visible" from="CanvasLayer2/intro/intro_label" to="spawn_odds_change_animation" method="play" binds= [ "play" ]]
+[connection signal="fully_visible" from="CanvasLayer2/intro/intro_label" to="consigna_anim" method="play" binds= [ "play" ]]
 [connection signal="fully_visible" from="CanvasLayer2/intro/intro_label" to="fade_out" method="fade_in"]
 [connection signal="fully_visible" from="CanvasLayer2/intro/consigna_label" to="CanvasLayer2/intro/free_timer" method="start"]
+[connection signal="fully_visible" from="CanvasLayer2/intro/consigna_label" to="spawn_odds_change_animation" method="play" binds= [ "play" ]]
 [connection signal="timeout" from="CanvasLayer2/intro/free_timer" to="CanvasLayer2/intro" method="queue_free"]
 [connection signal="fully_visible" from="CanvasLayer2/win_label" to="fade_out_win_anim" method="play" binds= [ "play" ]]
 [connection signal="timeout" from="time_left" to="." method="_on_time_left_timeout"]

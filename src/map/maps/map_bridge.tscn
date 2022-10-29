@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/texture/some_autotiles.png" type="Texture" id=4]
 [ext_resource path="res://src/color/palette_client.tscn" type="PackedScene" id=5]
 
-[sub_resource type="Image" id=297]
+[sub_resource type="Image" id=293]
 data = {
 "data": PoolByteArray( 149, 255, 0, 255, 0, 87, 0, 255, 64, 44, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -17,7 +17,7 @@ data = {
 [sub_resource type="ImageTexture" id=278]
 flags = 0
 flags = 0
-image = SubResource( 297 )
+image = SubResource( 293 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=279]
@@ -362,7 +362,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="Image" id=298]
+[sub_resource type="Image" id=294]
 data = {
 "data": PoolByteArray( 240, 188, 60, 255, 71, 58, 0, 255, 41, 28, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -374,7 +374,7 @@ data = {
 [sub_resource type="ImageTexture" id=282]
 flags = 0
 flags = 0
-image = SubResource( 298 )
+image = SubResource( 294 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=283]
@@ -385,7 +385,7 @@ shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
 shader_param/palette = SubResource( 282 )
 
-[sub_resource type="Image" id=299]
+[sub_resource type="Image" id=295]
 data = {
 "data": PoolByteArray( 252, 252, 252, 255, 60, 188, 252, 255, 0, 112, 236, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -397,7 +397,7 @@ data = {
 [sub_resource type="ImageTexture" id=285]
 flags = 0
 flags = 0
-image = SubResource( 299 )
+image = SubResource( 295 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=286]
@@ -408,7 +408,7 @@ shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
 shader_param/palette = SubResource( 285 )
 
-[sub_resource type="Image" id=300]
+[sub_resource type="Image" id=296]
 data = {
 "data": PoolByteArray( 252, 252, 252, 255, 188, 188, 188, 255, 60, 188, 252, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
@@ -420,7 +420,7 @@ data = {
 [sub_resource type="ImageTexture" id=288]
 flags = 0
 flags = 0
-image = SubResource( 300 )
+image = SubResource( 296 )
 size = Vector2( 4, 1 )
 
 [sub_resource type="ShaderMaterial" id=289]
@@ -431,28 +431,28 @@ shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
 shader_param/palette = SubResource( 288 )
 
-[sub_resource type="Image" id=301]
+[sub_resource type="Image" id=297]
 data = {
-"data": PoolByteArray( 246, 231, 213, 255, 255, 156, 198, 255, 247, 82, 49, 255, 57, 57, 57, 255 ),
+"data": PoolByteArray( 252, 252, 252, 255, 188, 188, 188, 255, 255, 0, 0, 255, 0, 0, 0, 255 ),
 "format": "RGBA8",
 "height": 1,
 "mipmaps": false,
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id=295]
+[sub_resource type="ImageTexture" id=291]
 flags = 0
 flags = 0
-image = SubResource( 301 )
+image = SubResource( 297 )
 size = Vector2( 4, 1 )
 
-[sub_resource type="ShaderMaterial" id=296]
+[sub_resource type="ShaderMaterial" id=292]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/palette_size = 4
 shader_param/offset = 0
 shader_param/blue_index_offset = 0.0
-shader_param/palette = SubResource( 295 )
+shader_param/palette = SubResource( 291 )
 
 [node name="map" type="Node2D"]
 
@@ -510,7 +510,7 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 3, 2, 0, 0, 3, 0, 3, 4, 0, 1, 5, 0, 2, 
 index = 6
 
 [node name="bridge" type="TileMap" parent="."]
-material = SubResource( 296 )
+material = SubResource( 292 )
 tile_set = SubResource( 101 )
 cell_size = Vector2( 32, 16 )
 format = 1
