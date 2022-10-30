@@ -11,14 +11,21 @@ export var delay_obj_bg := 0.2
 export var fade_in_step_time := 1.0
 export var fade_out_step_time := 1.0
 export var fade_level := 2
+
+var white = false
+
+func fade_to_white(step_time_override := -1.0):
+	fade_out(true, step_time_override)
+func fade_to_black(step_time_override := -1.0):
+	fade_out(false, step_time_override)
 	
-func fade_in(white:bool = false, step_time_override := -1.0):
+func fade_in(step_time_override := -1.0):
 	emit_signal("started_fade_in")
 	var step_time = step_time_override if step_time_override>=0.0 else fade_in_step_time
 	fade_in_obj(white, step_time)
 	yield(get_tree().create_timer(delay_obj_bg),"timeout")
 	fade_in_bg(white, step_time)
-	
+
 func fade_in_bg(white:bool = false, step_time:=1.0):
 	var background_palettes = GlobalPalette.background_palettes
 	for n in fade_level:
@@ -45,6 +52,7 @@ func fade_in_obj(white:bool = false, step_time:=1.0):
 				)[0]
 		
 func fade_out(white:bool = false,step_time_override := -1.0):
+	self.white = white
 	emit_signal("started_fade_out")
 	fade_out_bg(white, step_time_override if step_time_override>=0 else fade_out_step_time)
 	yield(get_tree().create_timer(delay_obj_bg),"timeout")

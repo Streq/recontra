@@ -46,6 +46,8 @@
 [ext_resource path="res://src/pickup/gun_pickup.tscn" type="PackedScene" id=44]
 [ext_resource path="res://src/map/maps/map_no_bridge.tscn" type="PackedScene" id=45]
 [ext_resource path="res://src/map/add_controls_text.gd" type="Script" id=46]
+[ext_resource path="res://src/text/display_text.tscn" type="PackedScene" id=47]
+[ext_resource path="res://src/map/sequence_orchestrator.gd" type="Script" id=48]
 
 [sub_resource type="Image" id=307]
 data = {
@@ -233,30 +235,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("CanvasLayer2/intro/consigna_label:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("CanvasLayer2/intro/consigna_label:visible_characters")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
 
 [sub_resource type="Animation" id=64]
 resource_name = "play"
@@ -298,156 +276,14 @@ tracks/2/keys = {
 "update": 1,
 "values": [ 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0 ]
 }
-tracks/3/type = "method"
-tracks/3/path = NodePath("time_left")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ -1 ],
-"method": "start"
-} ]
-}
-
-[sub_resource type="Animation" id=297]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("spawn_source/aim_mook:weight")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("spawn_source/jump_mook:weight")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("spawn_source/mook:weight")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("CanvasLayer2/intro/consigna_label:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("CanvasLayer2/intro/consigna_label:visible_characters")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=298]
-resource_name = "play"
-length = 90.0
-step = 1.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer2/intro/consigna_label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer2/intro/consigna_label:visible_characters")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1, 11 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0, 200 ]
-}
 
 [sub_resource type="Animation" id=76]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer2/win_label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer2/win_label:visible_characters")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CanvasLayer2/lose_label:visible_characters")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
 
 [sub_resource type="Animation" id=85]
 length = 5.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer2/win_label:visible")
+tracks/0/path = NodePath("stage_clear_music:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -459,19 +295,19 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer2/win_label:visible_characters")
+tracks/1/path = NodePath("music:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0, 100 ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("stage_clear_music:playing")
+tracks/2/type = "method"
+tracks/2/path = NodePath("CanvasLayer2/win_label/display_text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -479,11 +315,13 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"values": [ {
+"args": [  ],
+"method": "display"
+} ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("music:playing")
+tracks/3/path = NodePath("CanvasLayer2/survive_label:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -510,55 +348,33 @@ tracks/0/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ true, 0.25 ],
-"method": "fade_out"
+"args": [ 0.25 ],
+"method": "fade_to_white"
 } ]
 }
 
 [sub_resource type="Animation" id=80]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer2/lose_label:visible_characters")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer2/lose_label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
 
 [sub_resource type="Animation" id=81]
 resource_name = "play"
 length = 6.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer2/lose_label:visible_characters")
+tracks/0/type = "method"
+tracks/0/path = NodePath("fade_out")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0, 100 ]
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fade_to_black"
+} ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer2/lose_label:visible")
+tracks/1/path = NodePath("music:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -567,24 +383,22 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
-tracks/2/type = "method"
-tracks/2/path = NodePath("fade_out")
+tracks/2/type = "value"
+tracks/2/path = NodePath("game_over_music:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ false ],
-"method": "fade_out"
-} ]
+"update": 1,
+"values": [ true ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("music:playing")
+tracks/3/type = "method"
+tracks/3/path = NodePath("CanvasLayer2/lose_label/display_text")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -592,20 +406,10 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("game_over_music:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"values": [ {
+"args": [  ],
+"method": "display"
+} ]
 }
 
 [sub_resource type="RectangleShape2D" id=136]
@@ -614,7 +418,7 @@ extents = Vector2( 2552, 241.5 )
 [sub_resource type="Animation" id=163]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer2/intro/intro_label:visible")
+tracks/0/path = NodePath("intro_music:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -625,24 +429,12 @@ tracks/0/keys = {
 "update": 0,
 "values": [ false ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer2/intro/intro_label:visible_characters")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
 
 [sub_resource type="Animation" id=164]
 resource_name = "play"
 length = 8.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer2/intro/intro_label:visible")
+tracks/0/path = NodePath("intro_music:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -652,18 +444,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer2/intro/intro_label:visible_characters")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1.3, 1.55, 6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0, 13, 13, 60 ]
 }
 
 [node name="Node2D" type="Node2D"]
@@ -872,7 +652,6 @@ margin_top = -12.0
 margin_bottom = -12.0
 
 [node name="intro_label" type="Label" parent="CanvasLayer2/intro"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -894,7 +673,7 @@ align = 1
 autowrap = true
 percent_visible = 0.0
 script = ExtResource( 22 )
-consignas = [ "BUENO CUCHAME, LA COSA ES ASI. SOS UN SOLDADO Y DISPARAS TIRITOS" ]
+consignas = [ "BUENO CUCHAME,${} LA COSA ES ASI.${} SOS UN SOLDADO Y DISPARAS TIRITOS." ]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/intro/intro_label"]
 show_behind_parent = true
@@ -920,8 +699,9 @@ stretch_mode = 2
 type = 1
 index = 1
 
+[node name="display_text" parent="CanvasLayer2/intro/intro_label" instance=ExtResource( 47 )]
+
 [node name="consigna_label" type="Label" parent="CanvasLayer2/intro"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -973,6 +753,8 @@ index = 1
 
 [node name="add_controls_text" type="Node" parent="CanvasLayer2/intro/consigna_label"]
 script = ExtResource( 46 )
+
+[node name="display_text" parent="CanvasLayer2/intro/consigna_label" instance=ExtResource( 47 )]
 
 [node name="free_timer" type="Timer" parent="CanvasLayer2/intro"]
 wait_time = 3.0
@@ -1027,6 +809,9 @@ stretch_mode = 2
 type = 1
 index = 1
 
+[node name="display_text" parent="CanvasLayer2/win_label" instance=ExtResource( 47 )]
+time_per_char_in_seconds = 0.05
+
 [node name="lose_label" type="Label" parent="CanvasLayer2"]
 visible = false
 anchor_left = 0.5
@@ -1077,7 +862,10 @@ stretch_mode = 2
 type = 1
 index = 1
 
+[node name="display_text" parent="CanvasLayer2/lose_label" instance=ExtResource( 47 )]
+
 [node name="survive_label" type="Label" parent="CanvasLayer2"]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -84.0
@@ -1093,6 +881,8 @@ align = 1
 valign = 1
 script = ExtResource( 21 )
 timer_path = NodePath("../../time_left")
+
+[node name="display_text" parent="CanvasLayer2/survive_label" instance=ExtResource( 47 )]
 
 [node name="dead_enemies" type="Label" parent="CanvasLayer2"]
 visible = false
@@ -1124,7 +914,7 @@ margin_right = 516.0
 margin_bottom = 20.0
 custom_constants/separation = 0
 
-[node name="survive_label" type="Label" parent="CanvasLayer2/HBoxContainer"]
+[node name="weapon_label" type="Label" parent="CanvasLayer2/HBoxContainer"]
 margin_right = 36.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
@@ -1138,7 +928,7 @@ text = "ARMA"
 align = 1
 valign = 1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/HBoxContainer/survive_label"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/HBoxContainer/weapon_label"]
 modulate = Color( 0, 0, 0, 1 )
 show_behind_parent = true
 material = SubResource( 96 )
@@ -1188,11 +978,6 @@ one_shot = true
 playback_process_mode = 0
 anims/RESET = SubResource( 63 )
 anims/play = SubResource( 64 )
-
-[node name="consigna_anim" type="AnimationPlayer" parent="."]
-playback_process_mode = 0
-anims/RESET = SubResource( 297 )
-anims/play = SubResource( 298 )
 
 [node name="win_anim" type="AnimationPlayer" parent="."]
 playback_process_mode = 0
@@ -1256,7 +1041,6 @@ wait_time = 0.5
 
 [node name="intro_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 40 )
-autoplay = true
 bus = "music"
 
 [node name="game_over_music" type="AudioStreamPlayer" parent="."]
@@ -1276,6 +1060,9 @@ process_mode = 0
 wait_time = 0.5
 one_shot = true
 
+[node name="intro_orchestrator" type="Node" parent="."]
+script = ExtResource( 48 )
+
 [connection signal="dead_enemies_changed" from="." to="CanvasLayer2/dead_enemies" method="update_text"]
 [connection signal="spawn" from="spawner" to="." method="_on_spawner_spawn"]
 [connection signal="timeout" from="spawner/Timer" to="spawner" method="spawn"]
@@ -1283,12 +1070,7 @@ one_shot = true
 [connection signal="die" from="soldier" to="." method="_on_soldier_die"]
 [connection signal="weapon_change" from="soldier" to="CanvasLayer2/HBoxContainer/TextureRect/weapon_texture" method="_on_weapon_change"]
 [connection signal="body_entered" from="despawn_zone" to="despawn_zone" method="_on_despawn_zone_body_entered"]
-[connection signal="fully_visible" from="CanvasLayer2/intro/intro_label" to="consigna_anim" method="play" binds= [ "play" ]]
-[connection signal="fully_visible" from="CanvasLayer2/intro/intro_label" to="fade_out" method="fade_in"]
-[connection signal="fully_visible" from="CanvasLayer2/intro/consigna_label" to="CanvasLayer2/intro/free_timer" method="start"]
-[connection signal="fully_visible" from="CanvasLayer2/intro/consigna_label" to="spawn_odds_change_animation" method="play" binds= [ "play" ]]
 [connection signal="timeout" from="CanvasLayer2/intro/free_timer" to="CanvasLayer2/intro" method="queue_free"]
-[connection signal="fully_visible" from="CanvasLayer2/win_label" to="fade_out_win_anim" method="play" binds= [ "play" ]]
 [connection signal="timeout" from="time_left" to="." method="_on_time_left_timeout"]
 [connection signal="body_entered" from="splash_zone" to="splash_zone" method="_on_body_entered"]
 [connection signal="finished_fade_in" from="fade_out" to="palette_alternator/water_timer" method="start"]

@@ -25,6 +25,8 @@ func lose():
 	yield(lose_anim,"animation_finished")
 	Exit.lose()
 	pass
+	
+onready var win_display_text: Node = $CanvasLayer2/win_label/display_text
 
 func win():
 	if outcome_decided:
@@ -37,6 +39,8 @@ func win():
 	win_anim.play("play")
 	spawner_timer.paused = true
 	get_tree().call_group("enemy","die")
+	yield(win_display_text, "finished")
+	fade_out_win_anim.play("play")
 	yield(fade_out_win_anim,"animation_finished")
 	Exit.win()
 	pass
